@@ -768,7 +768,9 @@ footer .btnContact a{
 /******** Responsive Iphone *********/
 
 @media screen and (max-width: 480px) {
-
+    .btn{
+        padding: 0;
+    }
     .explication{
         padding-top: 15%;
     }

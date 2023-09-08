@@ -186,8 +186,9 @@ document.addEventListener("DOMContentLoaded", function() {
     liens.forEach(lien => {
         lien.addEventListener('click', () => {
             icon.classList.remove('is-opened');
-            menu.style.display = 'none';
-            isClicked = true;
+            entete.classList.remove('not-focused');
+            menu.classList.remove('visible');
+            isClicked = false;
         });
     });
 
