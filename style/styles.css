@@ -48,6 +48,14 @@
 
 /******** CSS de base *********/
 
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        body {
+            overflow-x: hidden;
+        }
+    }
+}
+
 body{
     background-color: var(--Background_color);
     overflow-x: hidden;
