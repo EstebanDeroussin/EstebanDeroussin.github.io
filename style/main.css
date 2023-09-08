@@ -123,6 +123,11 @@
     text-align: left;
 }
 
+.sous-menu li a{
+    padding : 10px 0;
+}
+
+
 .sous-menu.visible li{
     display: block;
     animation: forwards 0.5s apparition;
@@ -176,7 +181,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: clamp(160px,25%,240px);
-    padding : 0 3.5%;
     height: 90px;
 }
 
@@ -536,6 +540,10 @@ footer .btnContact a{
         top : 80px;
     }
 
+    .sous-menu li a{
+        padding-left: 15px;
+    }
+
     .sous-menu.visible{
         display: flex;
     }
@@ -553,6 +561,10 @@ footer .btnContact a{
         font-family: 'Akkurate Pro', serif;
         text-transform: uppercase;
         padding : 0;
+    }
+
+    .btn{
+        padding : 0 3.5%;
     }
 
     /******** Main ********/
@@ -660,7 +672,7 @@ footer .btnContact a{
     }
 
     .sous-menu li a{
-        transform: translateX(25px);
+        padding: 10px 40px;
         font-size: var(--taille-police-menu);
     }
 
@@ -731,8 +743,6 @@ footer .btnContact a{
     .details_2{
         flex-direction: column-reverse;
         height: 93vh;
-        /*margin: 50px 0 0;
-        padding: 50px 0 0;*/
         padding : 7vh 0 0;    }
 
     .slider1,

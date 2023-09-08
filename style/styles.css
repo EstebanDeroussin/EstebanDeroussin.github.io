@@ -73,12 +73,8 @@ p{
 
 a{
     display : flex;
-
     margin : 0;
-    padding : 10px 15px;
-
     width: 100%;
-
 
     font-family: 'Roboto', serif;
     font-size: var(--taille-police-small);
