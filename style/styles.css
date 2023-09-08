@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
 :root{
     --taille-police-small: 0.89rem;
     --taille-police-medium: 1.25rem;
@@ -11,7 +18,7 @@
     --Noir_elegant: #333;
     --Noir_Focus: #F7F5F5;
     --Noir_elegant_noFocus: #D2D2D2;
-    
+
     --Background_color: #FFF;
     --Backgroud_color2:#595959;
 
@@ -38,8 +45,14 @@
     padding : 0;
     margin : 0;
     z-index: 0;
-    
+
+    -ms-scroll-snap-type: y mandatory;
+
     scroll-snap-type: y mandatory;
+}
+
+::-moz-selection{
+    background:var(--Noir_elegant_noFocus);
 }
 
 ::selection{
@@ -48,7 +61,7 @@
 
 /******** CSS de base *********/
 
-@media not all and (min-resolution: 0.001dpcm) {
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (-o-min-device-pixel-ratio: 0/1), not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance:none) {
         body {
             overflow-x: hidden;
@@ -62,13 +75,19 @@ body{
 }
 
 section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
     width: 100vw;
     height: 100vh;
-    
+
     scroll-snap-align: start;
 }
 
@@ -80,6 +99,8 @@ p{
 }
 
 a{
+    display : -webkit-box;
+    display : -ms-flexbox;
     display : flex;
     margin : 0;
     width: 100%;
