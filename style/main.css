@@ -152,7 +152,6 @@
 }
 
 .Slides{
-    /*margin-top : 80px;*/
     display: flex;
     flex-direction: row;
     /*height: 85%;*/
@@ -169,7 +168,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*height: 15%;*/
 }
 
 .btn{
@@ -732,10 +730,10 @@ footer .btnContact a{
     .details,
     .details_2{
         flex-direction: column-reverse;
-        height: 100vh;
-        margin: 50px 0 0;
-        padding: 50px 0 0;
-    }
+        height: 93vh;
+        /*margin: 50px 0 0;
+        padding: 50px 0 0;*/
+        padding : 7vh 0 0;    }
 
     .slider1,
     .slider2,
@@ -768,9 +766,23 @@ footer .btnContact a{
 /******** Responsive Iphone *********/
 
 @media screen and (max-width: 480px) {
-    .btn{
-        padding: 0;
+    .Slides{
+        height: 62%;
     }
+
+    .navigation{
+        height: 23%;
+    }
+
+    .btn{
+        Ipad: 0;
+    }
+
+    .presentation p,
+    .presentation h1{
+        width: 85%;
+    }
+
     .explication{
         padding-top: 15%;
     }
@@ -780,7 +792,6 @@ footer .btnContact a{
     }
 
     .explication p{
-        width: clamp(65%, 80%, 100%);
-
+        width: clamp(75%, 85%, 95%);
     }
 }
