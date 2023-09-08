@@ -1,0 +1,784 @@
+/******** Entete *********/
+
+.entete{
+    position: fixed;
+    Left:0;
+    Top:0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: flex-end;
+    z-index: 1;
+    background-color: var(--Background_color);
+    border-bottom : 1px solid var(--Noir_elegant_noFocus);
+}
+
+#logo_Esteban{
+    position: fixed;
+    Left: 0;
+    Top: 0;
+
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+}
+
+/********* Menu-icon *********/
+
+.menu-icon{
+    position: relative;
+    width: var(--dimension_logo);
+    height: var(--dimension_logo);
+
+    border-radius: 50%;
+    background-color: var(--Background_color);
+
+    transition: transform 0.5s;
+}
+
+.menu-icon span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: var(--dimension_logo_2);
+    height: 0.5px;
+
+    background-color: var(--Noir_elegant);
+}
+
+.menu-icon span::before,
+.menu-icon span::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: var(--dimension_logo_2);
+    height: 0.5px;
+
+    content: '';
+    background-color: var(--Noir_elegant);
+    transition: transform 0.25s;
+}
+
+.menu-icon span::before{
+    transform: translateY(-7px);
+}
+
+.menu-icon span::after{
+    transform: translateY(7px);
+}
+
+.menu-icon:hover span::before{
+    transform: translateY(-8px);
+}
+
+.menu-icon:hover span::after{
+    transform: translateY(8px);
+}
+
+/******** Animation is-opened *********/
+
+.menu-icon.is-opened span{
+    background: transparent;
+}
+
+.menu-icon.is-opened span::before{
+    transform: translateY(0) rotate(45deg);
+}
+
+.menu-icon.is-opened span::after{
+    transform: translateY(0) rotate(-45deg);
+}
+
+/******** Menu déroulant ********/
+
+.sous-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+
+    position : fixed;
+    left : 0;
+
+    margin:0;
+    width: 100vw;
+    height: 100vh;
+
+    text-transform: uppercase;
+    backdrop-filter: blur(15px);
+    list-style: none;
+    border-top: 1px solid var(--Noir_elegant_noFocus);
+
+
+}
+
+.sous-menu li{
+    display: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sous-menu.visible li{
+    display: block;
+    animation: forwards 0.5s apparition;
+}
+
+@keyframes apparition {
+    0%{
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sous-menu li:is(:hover, :focus){
+    border-top: 0.5px solid var(--Noir_elegant);
+    border-bottom: 0.5px solid var(--Noir_elegant);
+}
+
+/******** Slider ********/
+
+.Slider{
+    height: 100vh;
+    width : 100vw;
+}
+
+.Slides{
+    /*margin-top : 80px;*/
+    display: flex;
+    flex-direction: row;
+    /*height: 85%;*/
+}
+
+.Slides img{
+    object-fit: cover;
+    width: 100%;
+    animation: infinite 10s Animation_Slider;
+}
+
+.navigation{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 15%;*/
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: clamp(160px,25%,240px);
+    padding : 0 3.5%;
+    height: 90px;
+}
+
+.btn p{
+    word-wrap: break-word;
+    width: 100%;
+}
+
+button{
+    border : none;
+    color : var(--Noir_elegant_noFocus);
+    background-color: transparent;
+    padding : 0;
+}
+
+@keyframes FocusAnimation{
+    0%{
+        color : var(--Noir_elegant_noFocus);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        color : var(--Noir_elegant);
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes Animation_Slider {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    95% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
+}
+
+button.focused{
+    animation: FocusAnimation 0.5s forwards;
+}
+
+.navigation p{
+    color : var(--Noir_elegant_noFocus);
+}
+
+.navigation p.focused{
+    color: var(--Noir_elegant);
+}
+
+/******** Main *********/
+
+.titre{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.titre img{
+    padding-top: 80px;
+    width: 90vw;
+}
+
+#à_propos img{
+    padding-left: 10vw;
+    transform: translateX(100%);
+}
+
+#à_propos .titre img.visible{
+    animation: Apparition_Titre_Droite 1.5s forwards;
+}
+
+#Typographie  .titre img,
+#Illustration  .titre img,
+#Branding  .titre img,
+#Design  .titre img,
+#Motion  .titre img{
+    padding-right: 10vw;
+    animation: Disparition 2s forwards;
+}
+
+#Typographie .titre img.visible,
+#Illustration .titre img.visible,
+#Branding .titre img.visible,
+#Design .titre img.visible,
+#Motion .titre img.visible{
+    animation: Apparition_Titre 2s forwards;
+}
+
+#à_propos h1,
+#à_propos p{
+    padding: 0 10vw;
+}
+
+@keyframes Apparition_Titre{
+    0%{
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes Disparition{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes Apparition_Titre_Droite{
+    0%{
+        transform: translateX(5%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.presentation{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentation p,
+.presentation h1{
+    width: 25vw;
+    line-height: var(--moyen-interlignage);
+}
+
+.presentation h1{
+    line-height: var(--grand-interlignage);
+}
+
+/******** Détails ********/
+
+.details,
+.details_2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80vh;
+    width: 100vw;
+    padding: 10vh 15%;
+
+    line-height: 23.2px;
+}
+
+.details_2{
+    background-color: var(--Noir_Focus);
+    flex-direction: row-reverse;
+}
+
+.explication{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    opacity: 0;
+}
+
+.explication.visible{
+    animation: parallax_explication 1.5s forwards;
+}
+
+.creation.visible,
+.images.visible,
+.slider1.visible,
+.slider2.visible,
+.slider3.visible,
+.slider4.visible,
+.slider5.visible,
+.slider6.visible,
+.slider7.visible{
+    animation: parallax_creation 1.5s forwards;
+}
+
+@keyframes parallax_explication {
+    0%{
+        transform: translateY(3%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes parallax_creation {
+    0%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.details h2,
+.details_2 h2{
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.details h3,
+.details_2 h3{
+    font-size: 5em;
+}
+
+.images{
+    height: 50vh;
+}
+
+.images,
+video{
+    display: flex;
+    width: 65%;
+}
+
+.images img{
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes Animation_Image {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    15% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    90% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
+}
+
+.slider1,
+.slider2,
+.slider3,
+.slider4,
+.slider5,
+.slider6,
+.slider7{
+    display: flex;
+    flex-direction: row;
+
+    overflow: hidden;
+    animation: parralax 1.5s forwards;
+}
+
+.slider1 img,
+.slider2 img,
+.slider3 img,
+.slider4 img,
+.slider5 img,
+.slider6 img,
+.slider7 img{
+    width: 100%;
+    object-fit: cover;
+    animation: infinite 6s Animation_Image;
+}
+
+/******** Footer *********/
+
+#contact{
+    flex-direction: column;
+    height: 100%;
+}
+
+footer{
+    height: 300px;
+    width: 100vw;
+    justify-content: space-between;
+    border-top: 1px solid var(--Noir_elegant_noFocus);
+}
+
+footer > p,
+.btnContact,
+.infoContact{
+    width:33%;
+}
+
+footer > p{
+    padding: 0 2vw 0 10vw;
+}
+
+footer,
+.btnContact{
+    display: flex;
+    align-items: center;
+}
+
+.btnContact{
+    width: 30vw;
+    justify-content: center;
+}
+
+.infoContact{
+    padding: 0 10vw 0 2vw;
+    text-align: right;
+}
+
+footer .btnContact a{
+    padding : 5px 16px;
+}
+
+.btnContact img{
+    width : 35px;
+}
+
+.rectangle{
+    height: 80px;
+    width: 100vw;
+    background-color: var(--Backgroud_color2);
+}
+
+/******** Responsive Computer ********/
+
+@media screen and (min-width: 900px) {
+    #logo_Esteban{
+        padding: 10px 10px 16px;
+        height: 55px;
+        border-right: 1px solid var(--Noir_elegant_noFocus);
+    }
+
+    .menu-icon{
+        transform: translateX(-12px);
+    }
+
+    .menu-icon.is-opened{
+        transform: rotate(180deg) translateX(12px);
+    }
+
+    .sous-menu{
+        display: none;
+        top : 80px;
+    }
+
+    .sous-menu.visible{
+        display: flex;
+    }
+
+    .Slides{
+        height: 85%;
+    }
+
+    .navigation{
+        height: 15%;
+    }
+
+    button{
+        font-size: var(--taille-police-large);
+        font-family: 'Akkurate Pro', serif;
+        text-transform: uppercase;
+        padding : 0;
+    }
+
+    /******** Main ********/
+
+    .details h3,
+    .details_2 h3{
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+    }
+
+    .details .explication{
+        align-items: flex-start;
+        padding-right: 5%;
+    }
+
+    .details_2 .explication{
+        align-items: flex-end;
+        text-align: right;
+        padding-left: 5%;
+    }
+
+    .details p,
+    .details h2{
+        padding-left: 65px;
+        max-width: 240px;
+    }
+
+    .details_2 p,
+    .details_2 h2{
+        padding-right: 65px;
+        max-width: 240px;
+    }
+
+    .slider1,
+    .slider2,
+    .slider3,
+    .slider4,
+    .slider5,
+    .slider6,
+    .slider7{
+        width: 65%;
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 1090px){
+    .navigation p{
+        display: none;
+    }
+}
+
+/******** Responsive Ipad ********/
+
+@media screen and (max-width: 900px) {
+
+    :root{
+        --taille-police-small: 0.75rem;
+        --taille-police-medium: 1.15rem;
+        --taille-police-large: 1.35rem;
+
+        --dimension_logo: 48px;
+        --dimension_logo_2: 19px;
+    }
+
+    /******* Entete ********/
+    .entete {
+        height: 55px;
+    }
+
+    #container_Logo{
+        display: block;
+    }
+
+    #logo_Esteban{
+        height: 39px;
+        padding: 5px 0 0 4px;
+    }
+
+    .entete.not-focused .sous-menu{
+        border: none;
+    }
+
+    .entete.not-focused #logo_Esteban{
+        opacity: 0;
+    }
+
+    .menu-icon{
+        transform: translateX(-5px) translateY(1px);
+    }
+
+    .menu-icon.is-opened{
+        transform: rotate(180deg) translateX(5px);
+    }
+
+    .sous-menu{
+        top : 55px;
+        height: 0;
+        transition: height 0.5s;
+
+        background: var(--Background_color);
+    }
+
+    .sous-menu.visible{
+        height: 100vh;
+    }
+
+    .sous-menu li a{
+        transform: translateX(25px);
+        font-size: var(--taille-police-menu);
+    }
+
+    .btn p{
+        display : none;
+    }
+
+    .Slider{
+        height: 100vh;
+    }
+
+    .Slides{
+        height: 70%;
+    }
+
+    .navigation{
+        height: 25%;
+        flex-direction: column;
+    }
+
+    .btn{
+        width: 100%;
+        justify-content: center;
+        border-bottom : 1px solid var(--Noir_elegant_noFocus);
+    }
+
+    .btn:hover,
+    .btn.focused{
+        background: var(--Noir_Focus);
+    }
+
+    .btn.focused{
+        border: 1px var(--Noir_elegant) solid;
+    }
+
+    .btn.border{
+        border : none;
+    }
+
+    button{
+        height: 100%;
+        width: 100%;
+        text-align: left;
+
+        color : var(--Noir_elegant);
+        font-size: var(--taille-police-small);
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+        padding-left: 2.5%;
+    }
+
+    button.focused{
+        animation: none;
+    }
+
+    /******** Main ********/
+
+    .presentation p,
+    .presentation h1{
+        width: 50%;
+    }
+
+    .titre img{
+        animation: Apparition_Titre 2s forwards;
+    }
+
+    .details,
+    .details_2{
+        flex-direction: column-reverse;
+        height: 100vh;
+        margin: 50px 0 0;
+        padding: 50px 0 0;
+    }
+
+    .slider1,
+    .slider2,
+    .slider3,
+    .slider4,
+    .slider5,
+    .slider6,
+    .slider7,
+    .images{
+        height: clamp(40%, 65% ,72%);
+        width: 100%;
+    }
+
+    .explication{
+        height: 45%;
+        width: 80%;
+        padding: 10%;
+    }
+
+    .explication h3{
+        padding-bottom : 5%;
+    }
+
+    .explication p{
+        width: clamp(50%, 65%, 75%);
+        line-height: var(--petit-interlignage);
+    }
+}
+
+/******** Responsive Iphone *********/
+
+@media screen and (max-width: 480px) {
+
+    .explication{
+        padding-top: 15%;
+    }
+
+    .explication h3{
+        padding-bottom : 7%;
+    }
+
+    .explication p{
+        width: clamp(65%, 80%, 100%);
+
+    }
+}

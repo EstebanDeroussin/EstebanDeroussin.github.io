@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chargement...</title>
+    <link rel="icon" href="src/logo/Logo_Site.png">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/download.css">
+</head>
+<body>
+    <section id="Chargement">
+        <div class="jelly"></div>
+        <svg width="0" height="0" class="jelly-maker">
+            <defs>
+                <filter id="uib-jelly-ooze">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="6.25" result="blur"/>
+                    <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze"/>
+                    <feBlend in="SourceGraphic" in2="ooze" />
+                </filter>
+            </defs>
+        </svg>
+        <p>Loading...</p>
+    </section>
+
+    <section id="Presentation">
+        <h1>Bienvenu sur mon Portfolio</h1>
+        <p>Dévelopé par Arthur Mathis</p>
+    </section>
+
+    <script src="script/preload.js"></script>
+</body>
+</html>
