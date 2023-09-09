@@ -2,7 +2,7 @@ let resourcesToPreload = [
     { type: 'style', url: 'style/main.css' },
     { type: 'script', url: 'script/animation.js' },
     { type: 'script', url: 'script/app.js' },
-    { type: 'image', url: 'src/img/Titres/ABout_ME_ILLU.png' },
+    { type: 'image', url: 'src/img/Titres/ABOUT_ME_ILLU.png' },
     { type: 'image', url: 'src/img/Titres/Branding.png' },
     { type: 'image', url: 'src/img/Titres/Illustration.png' },
     { type: 'image', url: 'src/img/Titres/Motion.png' },
