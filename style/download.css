@@ -235,3 +235,10 @@ section{
         transform: scale(0.65) translateX(75%);
     }
 }
+
+@media screen and (max-width: 1090px) {
+    #Presentation h1{
+        font-size: var(--taille-police-menu);
+        text-transform: none;
+    }
+}
