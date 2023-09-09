@@ -915,8 +915,7 @@ footer .btnContact a{
 
 /******** Responsive Ipad ********/
 
-/*media screen and (max-width: 900px)*/
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 900px) {
 
     :root{
         --taille-police-small: 0.75rem;
