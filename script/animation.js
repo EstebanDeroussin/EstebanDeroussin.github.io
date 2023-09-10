@@ -20,6 +20,37 @@ class Titre {
     }
 }
 
+class Slider {
+    constructor(sources) {
+        this.slides = document.querySelectorAll(sources);
+        this.currentIndex = 0;
+
+        setInterval(() => {
+            this.autoScrollFocus();
+        }, 6000);
+    }
+
+    changeImage(index) {
+        this.slides.forEach((slide) => {
+            slide.style.display = 'none';
+        });
+
+        this.slides[index].style.display = 'block';
+    }
+
+    autoScrollFocus() {
+        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+        this.changeImage(this.currentIndex);
+
+        let scrollPosition = this.slides[this.currentIndex].offsetLeft;
+
+        document.querySelector('.Slides').scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
 class apparition{
     constructor(source) {
         this.objects = document.querySelectorAll(source);
@@ -56,4 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let creation_5 = new apparition(".slider5");
     let creation_6 = new apparition(".slider6");
     let creation_7 = new apparition(".slider7");
+
+    let Slider1 = new Slider('.slider1 img');
+    let Slider2 = new Slider('.slider2 img');
+    let Slider3 = new Slider('.slider3 img');
+    let Slider4 = new Slider('.slider4 img');
+    let Slider5 = new Slider('.slider5 img');
+    let Slider6 = new Slider('.slider6 img');
+    let Slider7 = new Slider('.slider7 img');
 });

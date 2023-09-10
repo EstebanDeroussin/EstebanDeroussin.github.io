@@ -95,37 +95,6 @@ class BigSlider {
     }
 }
 
-class Slider {
-    constructor(sources) {
-        this.slides = document.querySelectorAll(sources);
-        this.currentIndex = 0;
-
-        setInterval(() => {
-            this.autoScrollFocus();
-        }, 6000);
-    }
-
-    changeImage(index) {
-        this.slides.forEach((slide) => {
-            slide.style.display = 'none';
-        });
-
-        this.slides[index].style.display = 'block';
-    }
-
-    autoScrollFocus() {
-        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-        this.changeImage(this.currentIndex);
-
-        let scrollPosition = this.slides[this.currentIndex].offsetLeft;
-
-        document.querySelector('.Slides').scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-    }
-}
-
 class MenuDeroulant {
     constructor(source_icon, source_liens) {
         this.icon = document.querySelector(source_icon);
@@ -161,13 +130,21 @@ class MenuDeroulant {
     }
 }
 
+function ProtectionData(source){
+    document.querySelectorAll(source).forEach(element => {
+        element.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     let liens = document.querySelectorAll('.sous-menu li a');
     let menu = document.querySelector('.sous-menu');
     let icon = document.querySelector('.menu-icon');
     let entete = document.querySelector('.entete');
     let isClicked = false;
-;
+
     icon.addEventListener('click', (e) => {
         e.preventDefault();
         if (isClicked) {
@@ -192,13 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    ProtectionData('img');
+    ProtectionData('video');
+
     let slider_principal = new BigSlider('.Slides img', '.btn','.navigation button', '.navigation p');
-    
-    let Slider1 = new Slider('.slider1 img');
-    let Slider2 = new Slider('.slider2 img');
-    let Slider3 = new Slider('.slider3 img');
-    let Slider4 = new Slider('.slider4 img');
-    let Slider5 = new Slider('.slider5 img');
-    let Slider6 = new Slider('.slider6 img');
-    let Slider7 = new Slider('.slider7 img');
 });
