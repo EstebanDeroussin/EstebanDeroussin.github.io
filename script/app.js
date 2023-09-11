@@ -1,134 +1,4 @@
-class BigSlider {
-    constructor(sources_images, sources_div, sources_buttons, sources_texts) {
-        this.slides = document.querySelectorAll(sources_images);
-        this.divs = document.querySelectorAll(sources_div);
-        this.buttons = document.querySelectorAll(sources_buttons);
-        this.texts = document.querySelectorAll(sources_texts);
-        this.currentIndex = 0;
-        this.interval = null;
 
-        this.setFocus(this.currentIndex);
-
-        this.buttons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                this.setFocus(index);
-                this.currentIndex = index;
-
-                let scrollPosition = this.slides[this.currentIndex].offsetLeft;
-
-                document.querySelector('.Slides').scrollTo({
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-
-                this.resetInterval();
-            });
-        });
-
-        this.startInterval();
-    }
-
-    setImage(index) {
-        this.slides.forEach((slide) => {
-            slide.style.display = 'none';
-        });
-
-        this.slides[index].style.display = 'block';
-    }
-
-    setButton(index) {
-        this.buttons.forEach((button) => {
-            button.classList.remove('focused');
-        });
-
-        this.buttons[index].classList.add('focused');
-    }
-
-    setText(index) {
-        this.texts.forEach((p) => {
-            p.classList.remove('focused');
-        });
-
-        this.texts[index].classList.add('focused');
-    }
-
-    setDiv(index){
-        this.divs.forEach((div) => {
-           div.classList.remove('focused');
-           div.classList.remove('border');
-        });
-
-        if(index > 0){
-            this.divs[index - 1].classList.add('border');
-        }
-        this.divs[index].classList.add('focused');
-    }
-
-    setFocus(index) {
-        this.setImage(index);
-        this.setButton(index);
-        this.setText(index);
-        this.setDiv(index);
-    }
-
-    autoScrollFocus() {
-        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-        this.setFocus(this.currentIndex);
-
-        let scrollPosition = this.slides[this.currentIndex].offsetLeft;
-
-        document.querySelector('.Slides').scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-    }
-
-    startInterval() {
-        this.interval = setInterval(() => {
-            this.autoScrollFocus();
-        }, 10000);
-    }
-
-    resetInterval() {
-         clearInterval(this.interval);
-        this.startInterval();
-    }
-}
-
-class MenuDeroulant {
-    constructor(source_icon, source_liens) {
-        this.icon = document.querySelector(source_icon);
-        this.liens = document.querySelectorAll(source_liens);
-        this.isClicked = false;
-
-        this.icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (this.isClicked) {
-                this.icon.classList.add('is-opened');
-                this.liens.style.display = 'block';
-                this.isClicked = false;
-            } else {
-                this.icon.classList.remove('is-opened');
-                this.liens.style.display = 'none';
-                this.isClicked = true;
-            }
-        });
-
-        this.liens.forEach(lien => {
-            lien.addEventListener('mouseover', () => {
-                this.liens.style.display = 'block';
-            });
-
-            lien.addEventListener('mouseout', () => {
-                this.liens.style.display = 'none';
-            });
-
-            lien.addEventListener('click', () => {
-                this.liens.style.display = 'none';
-            });
-        });
-    }
-}
 
 function ProtectionData(source){
     document.querySelectorAll(source).forEach(element => {
@@ -173,4 +43,26 @@ document.addEventListener("DOMContentLoaded", function() {
     ProtectionData('video');
 
     let slider_principal = new BigSlider('.Slides img', '.btn','.navigation button', '.navigation p');
+
+    let illustration_titre = new Titre('.titre img');
+
+    let explication = new apparition(".explication");
+    let creation_video  = new apparition(".creation");
+    let creation_images = new apparition(".images");
+
+    let creation_1 = new apparition(".slider1");
+    let creation_2 = new apparition(".slider2");
+    let creation_3 = new apparition(".slider3");
+    let creation_4 = new apparition(".slider4");
+    let creation_5 = new apparition(".slider5");
+    let creation_6 = new apparition(".slider6");
+    let creation_7 = new apparition(".slider7");
+
+    let Slider1 = new Slider('.slider1 img');
+    let Slider2 = new Slider('.slider2 img');
+    let Slider3 = new Slider('.slider3 img');
+    let Slider4 = new Slider('.slider4 img');
+    let Slider5 = new Slider('.slider5 img');
+    let Slider6 = new Slider('.slider6 img');
+    let Slider7 = new Slider('.slider7 img');
 });
