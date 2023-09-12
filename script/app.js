@@ -1,5 +1,3 @@
-
-
 function ProtectionData(source){
     document.querySelectorAll(source).forEach(element => {
         element.addEventListener('contextmenu', (e) => {

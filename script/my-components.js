@@ -95,41 +95,6 @@ class BigSlider {
     }
 }
 
-class MenuDeroulant {
-    constructor(source_icon, source_liens) {
-        this.icon = document.querySelector(source_icon);
-        this.liens = document.querySelectorAll(source_liens);
-        this.isClicked = false;
-
-        this.icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (this.isClicked) {
-                this.icon.classList.add('is-opened');
-                this.liens.style.display = 'block';
-                this.isClicked = false;
-            } else {
-                this.icon.classList.remove('is-opened');
-                this.liens.style.display = 'none';
-                this.isClicked = true;
-            }
-        });
-
-        this.liens.forEach(lien => {
-            lien.addEventListener('mouseover', () => {
-                this.liens.style.display = 'block';
-            });
-
-            lien.addEventListener('mouseout', () => {
-                this.liens.style.display = 'none';
-            });
-
-            lien.addEventListener('click', () => {
-                this.liens.style.display = 'none';
-            });
-        });
-    }
-}
-
 class Titre {
     constructor(source) {
         this.images = document.querySelectorAll(source);
