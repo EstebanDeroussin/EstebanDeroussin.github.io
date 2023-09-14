@@ -188,7 +188,7 @@ class menu{
 
         this.liens.forEach((element) => {
             element.addEventListener('click', (e) => {
-                //e.preventDefault();
+                e.preventDefault();
                 this.onSelectionne(element);
             });
         });
@@ -214,7 +214,7 @@ class menu{
         this.entete.classList.remove('not-focused');
         this.isClicked = true;
 
-        /*
+
         let href = link.getAttribute('href');
         if (href) {
             let targetId = href.substring(1);
@@ -228,6 +228,6 @@ class menu{
         } else {
             console.log("La source du lien est introuvable");
         }
-        */
+
     }
 }
