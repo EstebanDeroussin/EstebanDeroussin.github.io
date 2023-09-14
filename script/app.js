@@ -7,40 +7,13 @@ function ProtectionData(source){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    let liens = document.querySelectorAll('.sous-menu li a');
-    let menu = document.querySelector('.sous-menu');
-    let icon = document.querySelector('.menu-icon');
-    let entete = document.querySelector('.entete');
-    let isClicked = false;
-
-    icon.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (isClicked) {
-            icon.classList.add('is-opened');
-            menu.classList.add('visible');
-            entete.classList.add('not-focused');
-            isClicked = false;
-        } else {
-            icon.classList.remove('is-opened');
-            menu.classList.remove('visible');
-            entete.classList.remove('not-focused');
-            isClicked = true;
-        }
-    });
-
-    liens.forEach(lien => {
-        lien.addEventListener('click', () => {
-            icon.classList.remove('is-opened');
-            entete.classList.remove('not-focused');
-            menu.classList.remove('visible');
-            isClicked = false;
-        });
-    });
-
     ProtectionData('img');
     ProtectionData('video');
 
     let slider_principal = new BigSlider('.Slides img', '.btn','.navigation button', '.navigation p');
+
+    let menu_nav = new menu('.sous-menu', '.menu-icon', '.sous-menu li a', '.entete');
+    menu_nav.init();
 
     let illustration_titre = new Titre('.titre img');
 

@@ -94,29 +94,6 @@ class BigSlider {
         this.startInterval();
     }
 }
-
-class Titre {
-    constructor(source) {
-        this.images = document.querySelectorAll(source);
-        this.imageStates = new Array(this.images.length).fill(false);
-
-        this.images.forEach((image, index) => {
-            window.addEventListener('scroll', () => {
-                let rect = image.getBoundingClientRect();
-                let windowHeight = window.innerHeight;
-
-                if (rect.top <= windowHeight * 0.6 && rect.bottom >= 0.4 * windowHeight && !this.imageStates[index]) {
-                    image.classList.add('visible');
-                    this.imageStates[index] = true;
-                } else if ((rect.top > windowHeight * 0.6 || rect.bottom < 0.4 * windowHeight) && this.imageStates[index]) {
-                    image.classList.remove('visible');
-                    this.imageStates[index] = false;
-                }
-            });
-        });
-    }
-}
-
 class Slider {
     constructor(sources) {
         this.slides = document.querySelectorAll(sources);
@@ -148,6 +125,29 @@ class Slider {
     }
 }
 
+class Titre {
+    constructor(source) {
+        this.images = document.querySelectorAll(source);
+        this.imageStates = new Array(this.images.length).fill(false);
+
+        this.images.forEach((image, index) => {
+            window.addEventListener('scroll', () => {
+                let rect = image.getBoundingClientRect();
+                let windowHeight = window.innerHeight;
+
+                if (rect.top <= windowHeight * 0.6 && rect.bottom >= 0.4 * windowHeight && !this.imageStates[index]) {
+                    image.classList.add('visible');
+                    this.imageStates[index] = true;
+                } else if ((rect.top > windowHeight * 0.6 || rect.bottom < 0.4 * windowHeight) && this.imageStates[index]) {
+                    image.classList.remove('visible');
+                    this.imageStates[index] = false;
+                }
+            });
+        });
+    }
+}
+
+
 class apparition{
     constructor(source) {
         this.objects = document.querySelectorAll(source);
@@ -167,5 +167,49 @@ class apparition{
                 }
             })
         })
+    }
+}
+
+class menu{
+    constructor(source_menu, source_icon, source_liens, source_entete){
+        this.menu = document.querySelector(source_menu);
+        this.icon = document.querySelector(source_icon);
+        this.liens = document.querySelectorAll(source_liens);
+        this.entete = document.querySelector(source_entete);
+        this.isClicked = false;
+    };
+
+    init(){
+        this.icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.onClick();
+        });
+
+        this.liens.forEach((element) => {
+            element.addEventListener('click', (e) => {
+                this.onSelectionne();
+            });
+        });
+    }
+
+    onClick(){
+        if(this.isClicked){
+            this.menu.classList.add('visible');
+            this.icon.classList.add('is-opened');
+            this.entete.classList.add('not-focused');
+            this.isClicked = false;
+        } else {
+            this.menu.classList.remove('visible');
+            this.icon.classList.remove('is-opened');
+            this.entete.classList.remove('not-focused');
+            this.isClicked = true;
+        }
+    }
+
+    onSelectionne(){
+        this.menu.classList.remove('visible');
+        this.icon.classList.remove('is-opened');
+        this.entete.classList.remove('not-focused');
+        this.isClicked = true;
     }
 }
