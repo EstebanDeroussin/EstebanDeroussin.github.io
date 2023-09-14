@@ -170,6 +170,7 @@ class apparition{
     }
 }
 
+
 class menu{
     constructor(source_menu, source_icon, source_liens, source_entete){
         this.menu = document.querySelector(source_menu);
@@ -187,7 +188,8 @@ class menu{
 
         this.liens.forEach((element) => {
             element.addEventListener('click', (e) => {
-                this.onSelectionne();
+                //e.preventDefault();
+                this.onSelectionne(element);
             });
         });
     }
@@ -206,10 +208,26 @@ class menu{
         }
     }
 
-    onSelectionne(){
+    onSelectionne(link){
         this.menu.classList.remove('visible');
         this.icon.classList.remove('is-opened');
         this.entete.classList.remove('not-focused');
         this.isClicked = true;
+
+        /*
+        let href = link.getAttribute('href');
+        if (href) {
+            let targetId = href.substring(1);
+            let targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: "instant"
+                });
+            }
+        } else {
+            console.log("La source du lien est introuvable");
+        }
+        */
     }
 }

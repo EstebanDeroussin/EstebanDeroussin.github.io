@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let slider_principal = new BigSlider('.Slides img', '.btn','.navigation button', '.navigation p');
 
-    let menu_nav = new menu('.sous-menu', '.menu-icon', '.sous-menu li a', '.entete');
+    let menu_nav = new menu('.sous-menu', '.menu-icon', '.sous-menu a', '.entete');
     menu_nav.init();
 
     let illustration_titre = new Titre('.titre img');
