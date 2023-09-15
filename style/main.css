@@ -191,8 +191,6 @@ section {
     padding : 10px 0;
 }
 
-
-
 .sous-menu.visible a{
     display: block;
     -webkit-animation: forwards 0.5s apparition;
@@ -989,6 +987,7 @@ footer .btnContact a{
     }
 
     .sous-menu a{
+        width: calc(100% - 80px);
         padding: 10px 40px;
         font-size: var(--taille-police-menu);
     }
