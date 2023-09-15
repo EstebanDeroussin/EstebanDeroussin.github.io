@@ -186,7 +186,7 @@ section {
 
 .sous-menu a{
     display: none;
-    width: calc(100% - 80px);
+    width: calc(100% - 15px);
     text-align: left;
     padding : 10px 0;
 }
