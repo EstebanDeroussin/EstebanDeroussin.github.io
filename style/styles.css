@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 5 version
-*/
-
 :root{
     --taille-police-small: 0.89rem;
     --taille-police-medium: 1.25rem;
@@ -46,13 +39,7 @@
     margin : 0;
     z-index: 0;
 
-    -ms-scroll-snap-type: y mandatory;
-
     scroll-snap-type: y mandatory;
-}
-
-::-moz-selection{
-    background:var(--Noir_elegant_noFocus);
 }
 
 ::selection{
@@ -60,14 +47,6 @@
 }
 
 /******** CSS de base *********/
-
-@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (-o-min-device-pixel-ratio: 0/1), not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance:none) {
-        body {
-            overflow-x: hidden;
-        }
-    }
-}
 
 body{
     background-color: var(--Background_color);
@@ -105,7 +84,6 @@ h1{
 h2{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    /*font-size: var(--taille-police-small);*/
     font-size: var(--taille-police-medium);
     color : var(--Noir_elegant);
 }

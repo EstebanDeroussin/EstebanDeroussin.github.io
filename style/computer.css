@@ -1,0 +1,99 @@
+/******** Responsive Computer ********/
+
+#logo_Esteban{
+    padding: 10px 10px 16px;
+    height: 55px;
+    border-right: 1px solid var(--Noir_elegant_noFocus);
+}
+
+.menu-icon{
+    transform: translateX(-12px);
+}
+
+.menu-icon.is-opened{
+    transform: rotate(180deg) translateX(12px);
+}
+
+.sous-menu{
+    display: none;
+    top : 80px;
+}
+
+.sous-menu a{
+    padding-left: 15px;
+}
+
+.sous-menu.visible{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.Slides{
+    height: 85%;
+}
+
+.navigation{
+    height: 15%;
+}
+
+button{
+    font-size: var(--taille-police-large);
+    font-family: 'Akkurate Pro', serif;
+    text-transform: uppercase;
+    padding : 0;
+}
+
+.btn{
+    padding : 0 3.5%;
+}
+
+/******** Main ********/
+
+.details h3,
+.details_2 h3{
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.details .explication{
+    align-items: flex-start;
+    padding-right: 5%;
+}
+
+.details_2 .explication{
+    align-items: flex-end;
+    text-align: right;
+    padding-left: 5%;
+}
+
+.details p,
+.details h2{
+    padding-left: 65px;
+    max-width: 240px;
+}
+
+.details_2 p,
+.details_2 h2{
+    padding-right: 65px;
+    max-width: 240px;
+}
+
+.slider1,
+.slider2,
+.slider3,
+.slider4,
+.slider5,
+.slider6,
+.slider7{
+    width: 65%;
+    height: 50vh;
+}
+
+/*
+@media screen and (max-width: 1090px){
+    .navigation p{
+        display: none;
+    }
+}
+*/
