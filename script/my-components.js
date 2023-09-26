@@ -192,6 +192,7 @@ class menu{
                 this.onSelectionne(element);
             });
         });
+        console.log('Bouton clické !');
     }
 
     onClick(){
