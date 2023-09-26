@@ -224,15 +224,18 @@ class menu{
             console.log("Lien trouvé");
 
             if (targetElement) {
+                /*
                 window.scrollTo({
                     top: targetElement.offsetTop,
                     behavior: "smooth"
                 });
+                */
+                targetElement.scrollIntoView();
 
                 console.log("Scroll effectué");
             }
         } else {
             console.log("La source du lien est introuvable");
-        }    
+        }   
     }
 }
