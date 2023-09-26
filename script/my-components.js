@@ -226,7 +226,7 @@ class menu{
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop,
-                    behavior: "instant"
+                    behavior: "smooth"
                 });
 
                 console.log("Scroll effectué");
