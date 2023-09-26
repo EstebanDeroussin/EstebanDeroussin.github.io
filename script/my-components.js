@@ -190,9 +190,9 @@ class menu{
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.onSelectionne(element);
+                console.log('Bouton clické !');
             });
         });
-        console.log('Bouton clické !');
     }
 
     onClick(){
