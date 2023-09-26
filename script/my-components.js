@@ -190,7 +190,8 @@ class menu{
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.onSelectionne(element);
-                console.log('Bouton clické !');
+
+                console.log("Bouton clické !");
             });
         });
     }
@@ -219,11 +220,16 @@ class menu{
         if (href) {
             let targetId = href.substring(1);
             let targetElement = document.getElementById(targetId);
+
+            console.log("Lien trouvé");
+
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop,
                     behavior: "instant"
                 });
+
+                console.log("Scroll effectué");
             }
         } else {
             console.log("La source du lien est introuvable");
