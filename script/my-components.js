@@ -214,7 +214,6 @@ class menu{
         this.entete.classList.remove('not-focused');
         this.isClicked = true;
 
-
         let href = link.getAttribute('href');
         if (href) {
             let targetId = href.substring(1);
