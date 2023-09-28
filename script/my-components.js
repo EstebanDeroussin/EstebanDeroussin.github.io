@@ -281,7 +281,7 @@ class Page {
     }
 
     scrollToSection(index) {
-        let doc = querySelector('html');
+        let doc = document.querySelector('html');
         doc.style.removeProperty('scroll-snap-type');
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
