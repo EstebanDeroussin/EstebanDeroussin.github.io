@@ -281,10 +281,13 @@ class Page {
     }
 
     scrollToSection(index) {
+        let doc = querySelector('html');
+        doc.style.removeProperty('scroll-snap-type');
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: "start"
         });
+        doc.style.setProperty('scroll-snap-type', 'y mandatory');
     }
 
     handleScroll(event) {
