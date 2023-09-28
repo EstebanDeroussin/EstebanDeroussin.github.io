@@ -283,13 +283,21 @@ class Page {
     scrollToSection(index) {
         let doc = document.querySelector('html');
         doc.style.removeProperty('scroll-snap-type');
-        this.sections.style.removeProperty('scroll-snap-align');
+        this.sections.forEach(section => {
+            section.style.removeProperty('scroll-snap-align');
+        });
+        let docStyle = window.getComputedStyle(doc);
+        for (let property in docStyle) {
+            console.log(property + ': ' + docStyle[property]);
+        }
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: "start"
         });
         doc.style.setProperty('scroll-snap-type', 'y mandatory');
-        this.sections.style.setProperty('scroll-snap-align', 'start');
+        this.sections.forEach(section => {
+            section.style.setProperty('scroll-snap-align', 'start');
+        });
     }
 
     handleScroll(event) {
