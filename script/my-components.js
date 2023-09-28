@@ -1,3 +1,6 @@
+/**
+ * @brief Class représentant un slider avec images, textes et boutons
+ */
 class BigSlider {
     constructor(sources_images, sources_div, sources_buttons, sources_texts) {
         this.slides = document.querySelectorAll(sources_images);
@@ -6,7 +9,9 @@ class BigSlider {
         this.texts = document.querySelectorAll(sources_texts);
         this.currentIndex = 0;
         this.interval = null;
+    }
 
+    init(){
         this.setFocus(this.currentIndex);
 
         this.buttons.forEach((button, index) => {
@@ -94,11 +99,17 @@ class BigSlider {
         this.startInterval();
     }
 }
+
+/**
+ * @brief Class représentant un slider avec images
+ */
 class Slider {
     constructor(sources) {
         this.slides = document.querySelectorAll(sources);
         this.currentIndex = 0;
+    }
 
+    init(){
         setInterval(() => {
             this.autoScrollFocus();
         }, 6000);
@@ -125,20 +136,41 @@ class Slider {
     }
 }
 
+/**
+ * @brief Fonction analysant le comportement des objets dans la vue de l'utilisateur
+ * @param {*} element 
+ * @returns 0 L'élément entre dans la vue
+ * @returns 1 L'élément sort de la vue
+ * @returns -1 L'élément n'est pas dans la vue
+ */
+function ElementIntoView(element){
+    let rect = element.getBoundingClientRect();
+    let windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight * 0.85 && rect.bottom >= 0.15 * windowHeight) {
+        return 0;
+    } else if (rect.top > windowHeight * 0.85 || rect.bottom < 0.15 * windowHeight) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
 class Titre {
     constructor(source) {
         this.images = document.querySelectorAll(source);
         this.imageStates = new Array(this.images.length).fill(false);
+    }
 
+    init(){
         this.images.forEach((image, index) => {
             window.addEventListener('scroll', () => {
-                let rect = image.getBoundingClientRect();
-                let windowHeight = window.innerHeight;
-
-                if (rect.top <= windowHeight * 0.6 && rect.bottom >= 0.4 * windowHeight && !this.imageStates[index]) {
+                let view = ElementIntoView(image);
+                
+                if (view == 0  && !this.imageStates[index]) {
                     image.classList.add('visible');
                     this.imageStates[index] = true;
-                } else if ((rect.top > windowHeight * 0.6 || rect.bottom < 0.4 * windowHeight) && this.imageStates[index]) {
+                } else if (view == 1 && this.imageStates[index]) {
                     image.classList.remove('visible');
                     this.imageStates[index] = false;
                 }
@@ -152,16 +184,17 @@ class apparition{
     constructor(source) {
         this.objects = document.querySelectorAll(source);
         this.objetstatus = new Array(this.objects.length).fill(false);
+    }
 
+    init(){
         this.objects.forEach((object, index) => {
             window.addEventListener('scroll', () => {
-                let rect = object.getBoundingClientRect();
-                let windowHeight = window.innerHeight;
+                let view = ElementIntoView(object);
 
-                if(rect.top <= windowHeight * 0.8 && rect.bottom >= 0.2 * windowHeight && !this.objetstatus[index]){
+                if(view == 0 && !this.objetstatus[index]){
                     object.classList.add('visible');
                     this.objetstatus[index] = true;
-                } else if ((rect.top > windowHeight * 0.8 || rect.bottom < 0.2 * windowHeight) && this.objetstatus[index]){
+                } else if (view == 1 && this.objetstatus[index]){
                     object.classList.remove('visible');
                     this.objetstatus[index] = false;
                 }
@@ -169,7 +202,6 @@ class apparition{
         })
     }
 }
-
 
 class menu{
     constructor(source_menu, source_icon, source_liens, source_entete){
@@ -179,51 +211,206 @@ class menu{
         this.entete = document.querySelector(source_entete);
         this.isClicked = false;
     };
-
-    init(){
-        this.icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.onClick();
-        });
-
-        this.liens.forEach((element) => {
-            element.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.onSelectionne(element);
-            });
-        });
+    
+    onShow(){
+        this.menu.classList.add('visible');
+        this.icon.classList.add('is-opened');
+        this.entete.classList.add('not-focused');
+        this.isClicked = false;
     }
 
-    onClick(){
-        if(this.isClicked){
-            this.menu.classList.add('visible');
-            this.icon.classList.add('is-opened');
-            this.entete.classList.add('not-focused');
-            this.isClicked = false;
-        } else {
-            this.menu.classList.remove('visible');
-            this.icon.classList.remove('is-opened');
-            this.entete.classList.remove('not-focused');
-            this.isClicked = true;
-        }
-    }
-
-    onSelectionne(link){
+    onHide(){
         this.menu.classList.remove('visible');
         this.icon.classList.remove('is-opened');
         this.entete.classList.remove('not-focused');
         this.isClicked = true;
+    }
 
-        let href = link.getAttribute('href');
-        if (href) {
-            let targetId = href.substring(1);
-            let targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView();
-            }
+    onClick(){
+        if(this.isClicked){
+            this.onShow();
         } else {
-            console.log("La source du lien est introuvable");
-        }   
+            this.onHide();
+        }
+    }
+
+    onSelectionne(objet){
+        this.onHide();
+        objet.scrollIntoView();   
+    }
+
+}
+
+class Page {
+    constructor(sections, menu) {
+        this.sections = document.querySelectorAll(sections);
+        this.isScrolling = false;
+        this.currentIndex = 0;
+        this.menu = menu;
+        this.timeout = null;
+    }
+
+    init() {
+        window.addEventListener("wheel", (e) => this.handleScroll(e)); // Utilisez .bind(this) pour que `this` se réfère à l'instance de Page.
+
+        this.menu.icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.menu.onClick();
+        });
+
+        this.menu.liens.forEach((element) => {
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                let href = element.getAttribute('href');
+                if (href) {
+                    let targetId = href.substring(1);
+                    let targetElement = document.getElementById(targetId);
+                    this.menu.onSelectionne(targetElement);
+                    let i = 0;
+                    while (targetElement != this.sections[i] && i < this.sections.length) {
+                        i++;
+                    }
+                    if (i < this.sections.length) {
+                        this.currentIndex = i;
+                        this.scrollToSection(this.currentIndex); // Utilisez `this.scrollToSection` pour appeler la méthode.
+                    }
+                }
+            });
+        });
+    }
+
+    scrollToSection(index) {
+        console.log(index);
+
+
+        
+        this.sections[index].scrollIntoView({ 
+            behavior: "smooth" 
+        });
+        
+        console.log("scroll effectué");
+    }
+
+    handleScroll(event) {
+        console.log("event");
+
+        if (!this.isScrolling) {
+            console.log("réaction")
+            this.isScrolling = true;
+
+            let delta = event.deltaY;
+
+            console.log(this.currentIndex);
+            if (delta > 0 && this.currentIndex < this.sections.length - 1) {
+                this.currentIndex++;
+            } else if (delta < 0 && this.currentIndex > 0) {
+                this.currentIndex--;
+            }
+            console.log(this.currentIndex);
+
+            console.log("début du scroll");
+            this.scrollToSection(this.currentIndex); // Utilisez `this.scrollToSection` pour appeler la méthode.
+            console.log("fin du scroll");
+
+            console.log("début du timer");
+            clearTimeout(this.timeout); // Utilisez `this.timeout` pour accéder à la variable de temporisation.
+            this.timeout = setTimeout(() => {
+                this.isScrolling = false;
+            }, 1250); // Ajustez le délai pour contrôler la vitesse de défilement.
+            console.log("fin du timer");
+        }
     }
 }
+
+
+
+/*
+class Page {
+    constructor(sections, menu) {
+        this.sections = document.querySelectorAll(sections);
+        this.isScrolling = false;
+        this.currentIndex = 0;
+        this.menu = menu;
+    }
+
+    init() {
+        window.addEventListener("wheel", this.handleScroll);
+
+        this.menu.icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.menu.onClick();
+        });
+
+        this.menu.liens.forEach((element) => {
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                let href = element.getAttribute('href');
+                if (href) {
+                    let targetId = href.substring(1);
+                    let targetElement = document.getElementById(targetId);
+                    this.menu.onSelectionne(targetElement);
+                    let i = 0;
+                    while (targetElement != this.sections[i] && i < this.sections.length) {
+                        i++;
+                    }
+                    if (i < this.sections.length) {
+                        this.currentIndex = i;
+                        this.scrollToCurrentSection();
+                    }
+                }
+            });
+        });
+    }
+
+    scrollToSection(index) {
+        sections[index].scrollIntoView({ behavior: "smooth" });
+    }
+    
+    handleScroll(event) {
+        if (!this.isScrolling) {
+            this.isScrolling = true;
+            
+            let delta = event.deltaY;
+            
+            if (delta > 0 && this.currentIndex < this.sections.length - 1) {
+                this.currentIndex++;
+            } else if (delta < 0 && this.currentIndex > 0) {
+                this.currentIndex--;
+            }
+          
+            scrollToSection(this.currentIndex);
+          
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                this.isScrolling = false;
+            }, 1500); // Adjust the delay to control scrolling speed
+        }
+    }
+}
+*/
+
+
+/*
+    constructor(source_section, source_menu, source_icon, source_liens, source_entete){
+        this.sections = document.querySelectorAll(source_section);
+        this.menu = new menu(source_menu, source_icon, source_liens, source_entete);
+        this.position = 0;
+        this.currentIndex = 0;
+    }
+*/
+
+/*
+window.addEventListener('scroll' ,(e) => {
+    e.preventDefault();
+    this.scrollDirection();
+    this.changeSection(this.currentIndex);
+});
+*/
+
+    /*
+    scrollToCurrentSection() {
+        this.sections[this.currentIndex].scrollIntoView({ behavior: 'smooth' });
+
+        console.log("On scroll");
+    }
+    */

@@ -39,7 +39,7 @@
     margin : 0;
     z-index: 0;
 
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
 }
 
 ::selection{
@@ -50,7 +50,7 @@
 
 body{
     background-color: var(--Background_color);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 p{
@@ -61,8 +61,6 @@ p{
 }
 
 a{
-    display : -webkit-box;
-    display : -ms-flexbox;
     display : flex;
     margin : 0;
     width: 100%;
