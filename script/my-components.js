@@ -251,7 +251,8 @@ class Page {
     }
 
     init() {
-        window.addEventListener("scroll", (e) => this.handleScroll(e)); // Utilisez .bind(this) pour que `this` se réfère à l'instance de Page.
+        //window.addEventListener("wheel", (e) => this.handleScroll(e)); 
+        //window.addEventListener("scroll", (e) => this.handleScroll(e));
 
         this.menu.icon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -280,44 +281,28 @@ class Page {
     }
 
     scrollToSection(index) {
-        console.log(index);
-
-
-        
         this.sections[index].scrollIntoView({ 
-            behavior: "smooth" 
+            behavior: 'smooth',
+            block: "start"
         });
-        
-        console.log("scroll effectué");
     }
 
     handleScroll(event) {
-        console.log("event");
-
         if (!this.isScrolling) {
             console.log("réaction")
             this.isScrolling = true;
-
             let delta = event.deltaY;
 
-            console.log(this.currentIndex);
             if (delta > 0 && this.currentIndex < this.sections.length - 1) {
                 this.currentIndex++;
             } else if (delta < 0 && this.currentIndex > 0) {
                 this.currentIndex--;
             }
-            console.log(this.currentIndex);
-
-            console.log("début du scroll");
             this.scrollToSection(this.currentIndex); // Utilisez `this.scrollToSection` pour appeler la méthode.
-            console.log("fin du scroll");
-
-            console.log("début du timer");
             clearTimeout(this.timeout); // Utilisez `this.timeout` pour accéder à la variable de temporisation.
             this.timeout = setTimeout(() => {
                 this.isScrolling = false;
-            }, 1250); // Ajustez le délai pour contrôler la vitesse de défilement.
-            console.log("fin du timer");
+            }, 1500); // Ajustez le délai pour contrôler la vitesse de défilement.
         }
     }
 }

@@ -57,4 +57,5 @@ document.addEventListener("DOMContentLoaded", function() {
     let mymenu = new menu('.sous-menu', '.menu-icon', '.sous-menu a', '.entete');
     let myPage = new Page('section', mymenu);
     myPage.init();
+
 });

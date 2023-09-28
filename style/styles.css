@@ -39,7 +39,7 @@
     margin : 0;
     z-index: 0;
 
-    /*scroll-snap-type: y mandatory;*/
+    scroll-snap-type: y mandatory;
 }
 
 ::selection{
