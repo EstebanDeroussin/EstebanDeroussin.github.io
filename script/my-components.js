@@ -251,7 +251,7 @@ class Page {
     }
 
     init() {
-        window.addEventListener("wheel", (e) => this.handleScroll(e)); // Utilisez .bind(this) pour que `this` se réfère à l'instance de Page.
+        window.addEventListener("scroll", (e) => this.handleScroll(e)); // Utilisez .bind(this) pour que `this` se réfère à l'instance de Page.
 
         this.menu.icon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -321,96 +321,3 @@ class Page {
         }
     }
 }
-
-
-
-/*
-class Page {
-    constructor(sections, menu) {
-        this.sections = document.querySelectorAll(sections);
-        this.isScrolling = false;
-        this.currentIndex = 0;
-        this.menu = menu;
-    }
-
-    init() {
-        window.addEventListener("wheel", this.handleScroll);
-
-        this.menu.icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.menu.onClick();
-        });
-
-        this.menu.liens.forEach((element) => {
-            element.addEventListener('click', (e) => {
-                e.preventDefault();
-                let href = element.getAttribute('href');
-                if (href) {
-                    let targetId = href.substring(1);
-                    let targetElement = document.getElementById(targetId);
-                    this.menu.onSelectionne(targetElement);
-                    let i = 0;
-                    while (targetElement != this.sections[i] && i < this.sections.length) {
-                        i++;
-                    }
-                    if (i < this.sections.length) {
-                        this.currentIndex = i;
-                        this.scrollToCurrentSection();
-                    }
-                }
-            });
-        });
-    }
-
-    scrollToSection(index) {
-        sections[index].scrollIntoView({ behavior: "smooth" });
-    }
-    
-    handleScroll(event) {
-        if (!this.isScrolling) {
-            this.isScrolling = true;
-            
-            let delta = event.deltaY;
-            
-            if (delta > 0 && this.currentIndex < this.sections.length - 1) {
-                this.currentIndex++;
-            } else if (delta < 0 && this.currentIndex > 0) {
-                this.currentIndex--;
-            }
-          
-            scrollToSection(this.currentIndex);
-          
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-                this.isScrolling = false;
-            }, 1500); // Adjust the delay to control scrolling speed
-        }
-    }
-}
-*/
-
-
-/*
-    constructor(source_section, source_menu, source_icon, source_liens, source_entete){
-        this.sections = document.querySelectorAll(source_section);
-        this.menu = new menu(source_menu, source_icon, source_liens, source_entete);
-        this.position = 0;
-        this.currentIndex = 0;
-    }
-*/
-
-/*
-window.addEventListener('scroll' ,(e) => {
-    e.preventDefault();
-    this.scrollDirection();
-    this.changeSection(this.currentIndex);
-});
-*/
-
-    /*
-    scrollToCurrentSection() {
-        this.sections[this.currentIndex].scrollIntoView({ behavior: 'smooth' });
-
-        console.log("On scroll");
-    }
-    */
