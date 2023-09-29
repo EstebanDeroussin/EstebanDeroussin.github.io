@@ -282,14 +282,14 @@ class Page {
 
     scrollToSection(index) {
         this.sections.forEach((section) => {
-            section.addClassList('not-focused');
+            section.ClassList.add('not-focused');
         });
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: "start"
         });
         this.sections.forEach((section) => {
-            section.removeClassList('not-focused');
+            section.ClassList.remove('not-focused');
         });
     }
 
