@@ -261,6 +261,17 @@ class Page {
             }, 500);
         });
 
+        window.addEventListener('touchmove', () => {
+            this.sections.forEach((section) => {
+                section.style.scrollSnapAlign = 'start';
+            });
+            this.timeout = setTimeout(function() {
+                this.sections.forEach((section) => {
+                    section.style.removeProperty('scroll-snap-align');
+                });                
+            }, 500);
+        });
+
         this.menu.icon.addEventListener('click', (e) => {
             e.preventDefault();
             this.menu.onClick();
