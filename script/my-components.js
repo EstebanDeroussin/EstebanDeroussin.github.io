@@ -250,16 +250,6 @@ class Page {
     }
 
     init() {
-        window.addEventListener('scroll', () => {
-            this.isScrolling = true;
-            this.sections.forEach((section) => {
-                section.classList.add('scrolled');
-            });
-            this.timeout = setTimeout(() => {
-                section.classList.remove('scrolled');
-            }, 1000);
-        });
-
         this.menu.icon.addEventListener('click', (e) => {
             e.preventDefault();
             this.menu.onClick();
@@ -287,9 +277,15 @@ class Page {
     }
 
     scrollToSection(index) {
+        this.sections.forEach((section) => {
+            section.style.scrollSnapAlign = 'initial';
+        });
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
+        });
+        this.sections.forEach((section) => {
+            section.style.scrollSnapAlign = 'start';
         });
     }
 }
