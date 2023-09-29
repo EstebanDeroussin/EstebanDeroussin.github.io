@@ -280,28 +280,17 @@ class Page {
         });
     }
 
-    /*
     scrollToSection(index) {
         this.sections.forEach((section) => {
-            section.ClassList.add('not-focused');
+            section.classList.add('not-focused');
         });
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
-            block: "start"
+            block: 'start'
         });
         this.sections.forEach((section) => {
-            section.ClassList.remove('not-focused');
+            section.classList.remove('not-focused');
         });
-    }
-    */
-
-    scrollToSection(index) {
-        this.sections.classList.add('not-focused');
-        this.sections[index].scrollIntoView({ 
-            behavior: 'smooth',
-            block: "start"
-        });
-        this.sections.classList.remove('not-focused');
     }
 
     handleScroll(event) {
