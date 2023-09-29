@@ -244,7 +244,6 @@ class menu{
 class Page {
     constructor(sections, menu) {
         this.sections = document.querySelectorAll(sections);
-        this.isScrolling = false;
         this.currentIndex = 0;
         this.menu = menu;
         this.timeout = null;
@@ -257,16 +256,8 @@ class Page {
                 section.classList.add('scrolled');
             });
             this.timeout = setTimeout(() => {
-                this.isScrolling = false;
-            }, 1500);
-        });
-
-        window.addEventListener('scrollend', () => {
-            if(this.isScrolling) return;
-            
-            this.sections.forEach((section) => {
                 section.classList.remove('scrolled');
-            });
+            }, 1000);
         });
 
         this.menu.icon.addEventListener('click', (e) => {
