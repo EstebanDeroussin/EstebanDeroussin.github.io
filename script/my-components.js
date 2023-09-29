@@ -251,8 +251,23 @@ class Page {
     }
 
     init() {
-        //window.addEventListener("wheel", (e) => this.handleScroll(e)); 
-        //window.addEventListener("scroll", (e) => this.handleScroll(e));
+        window.addEventListener('scroll', () => {
+            this.isScrolling = true;
+            this.sections.forEach((section) => {
+                section.classList.add('scrolled');
+            });
+            this.timeout = setTimeout(() => {
+                this.isScrolling = false;
+            }, 1500);
+        });
+
+        window.addEventListener('scrollend', () => {
+            if(this.isScrolling) return;
+            
+            this.sections.forEach((section) => {
+                section.classList.remove('scrolled');
+            });
+        });
 
         this.menu.icon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -281,34 +296,9 @@ class Page {
     }
 
     scrollToSection(index) {
-        this.sections.forEach((section) => {
-            section.classList.add('not-focused');
-        });
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
         });
-        this.sections.forEach((section) => {
-            section.classList.remove('not-focused');
-        });
-    }
-
-    handleScroll(event) {
-        if (!this.isScrolling) {
-            console.log("réaction")
-            this.isScrolling = true;
-            let delta = event.deltaY;
-
-            if (delta > 0 && this.currentIndex < this.sections.length - 1) {
-                this.currentIndex++;
-            } else if (delta < 0 && this.currentIndex > 0) {
-                this.currentIndex--;
-            }
-            this.scrollToSection(this.currentIndex); // Utilisez `this.scrollToSection` pour appeler la méthode.
-            clearTimeout(this.timeout); // Utilisez `this.timeout` pour accéder à la variable de temporisation.
-            this.timeout = setTimeout(() => {
-                this.isScrolling = false;
-            }, 1500); // Ajustez le délai pour contrôler la vitesse de défilement.
-        }
     }
 }
