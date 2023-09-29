@@ -280,6 +280,7 @@ class Page {
         });
     }
 
+    /*
     scrollToSection(index) {
         this.sections.forEach((section) => {
             section.ClassList.add('not-focused');
@@ -291,6 +292,16 @@ class Page {
         this.sections.forEach((section) => {
             section.ClassList.remove('not-focused');
         });
+    }
+    */
+
+    scrollToSection(index) {
+        this.sectionsClassList.add('not-focused');
+        this.sections[index].scrollIntoView({ 
+            behavior: 'smooth',
+            block: "start"
+        });
+        this.sections.ClassList.remove('not-focused');
     }
 
     handleScroll(event) {
