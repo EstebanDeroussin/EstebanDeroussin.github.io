@@ -53,7 +53,8 @@ html{
 
 body{
     background-color: var(--Background_color);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: initial;
 }
 
 p{

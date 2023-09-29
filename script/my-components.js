@@ -277,19 +277,22 @@ class Page {
     }
 
     scrollToSection(index) {
-        /*
+        let liste = window.getComputedStyle(this.sections[0]);
         this.sections.forEach((section) => {
             section.style.scrollSnapAlign = 'initial';
         });
+        /*
+        for (let property in liste) {
+            console.log(property + ': ' + liste[property]);
+        }
         */
+
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
         });
-        /*
         this.sections.forEach((section) => {
             section.style.scrollSnapAlign = 'start';
         });
-        */
     }
 }
