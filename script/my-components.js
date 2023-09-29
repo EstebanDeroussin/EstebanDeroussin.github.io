@@ -288,8 +288,8 @@ class Page {
         */
 
         this.sections[index].scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+            behavior: 'smooth'
+            /*,block: 'start'*/
         });
         this.sections.forEach((section) => {
             section.style.scrollSnapAlign = 'start';
