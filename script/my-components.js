@@ -296,12 +296,12 @@ class Page {
     */
 
     scrollToSection(index) {
-        this.sections.ClassList.add('not-focused');
+        this.sections.classList.add('not-focused');
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth',
             block: "start"
         });
-        this.sections.ClassList.remove('not-focused');
+        this.sections.classList.remove('not-focused');
     }
 
     handleScroll(event) {
