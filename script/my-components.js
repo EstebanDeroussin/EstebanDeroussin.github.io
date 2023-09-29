@@ -292,7 +292,7 @@ class Page {
             /*,block: 'start'*/
         });
         this.sections.forEach((section) => {
-            section.style.scrollSnapAlign = 'start';
+            section.style.removeProperty('scroll-snap-align');
         });
     }
 }
