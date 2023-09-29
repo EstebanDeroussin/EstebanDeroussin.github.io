@@ -14,7 +14,7 @@ section {
     scroll-snap-align: start;
 }
 
-section::not-focused{
+section.not-focused{
      scroll-snap-align: none;
 }
 
