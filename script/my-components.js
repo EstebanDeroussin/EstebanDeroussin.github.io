@@ -253,23 +253,13 @@ class Page {
         window.addEventListener('wheel', () => {
             this.sections.forEach((section) => {
                 section.style.scrollSnapAlign = 'start';
-            });
-            this.timeout = setTimeout(function() {
-                this.sections.forEach((section) => {
-                    section.style.removeProperty('scroll-snap-align');
-                });                
-            }, 500);
+            });  
         });
 
         window.addEventListener('touchmove', () => {
             this.sections.forEach((section) => {
                 section.style.scrollSnapAlign = 'start';
             });
-            this.timeout = setTimeout(function() {
-                this.sections.forEach((section) => {
-                    section.style.removeProperty('scroll-snap-align');
-                });                
-            }, 500);
         });
 
         this.menu.icon.addEventListener('click', (e) => {
@@ -299,6 +289,9 @@ class Page {
     }
 
     scrollToSection(index) {
+        this.sections.forEach((section) => {
+            section.style.removeProperty('scroll-snap-align');
+        }); 
         this.sections[index].scrollIntoView({ 
             behavior: 'smooth'
             /*,block: 'start'*/
