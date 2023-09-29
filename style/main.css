@@ -11,7 +11,11 @@ section {
     width: 100vw;
     height: 100vh;
 
-    /*scroll-snap-align: start;*/
+    scroll-snap-align: start;
+}
+
+section::not-focused{
+     scroll-snap-align: none;
 }
 
 /******** Entete *********/
