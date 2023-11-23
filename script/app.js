@@ -1,42 +1,6 @@
-function ProtectionData(source){
-    document.querySelectorAll(source).forEach(element => {
-        element.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-        });
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    ProtectionData('img');
-    ProtectionData('video');
-
-    let slider_principal = new BigSlider('.Slides img', '.btn','.navigation button', '.navigation p');
-    slider_principal.init();
-
-    let illustration_titre = new Titre('.titre img');
-    illustration_titre.init();
-
-    let explication = new apparition(".explication");
-    let creation_video  = new apparition(".creation");
-    let creation_images = new apparition(".images");
-    explication.init();
-    creation_video.init();
-    creation_images.init();
-
-    let creation_1 = new apparition(".slider1");
-    let creation_2 = new apparition(".slider2");
-    let creation_3 = new apparition(".slider3");
-    let creation_4 = new apparition(".slider4");
-    let creation_5 = new apparition(".slider5");
-    let creation_6 = new apparition(".slider6");
-    let creation_7 = new apparition(".slider7");
-    creation_1.init();
-    creation_2.init();
-    creation_3.init();
-    creation_4.init();
-    creation_5.init();
-    creation_6.init();
-    creation_7.init();
+document.addEventListener("DOMContentLoaded", function () {
+    let bigSlider = new Accueil('.btn', '.Slider img', 'button', '.btn p');
+    bigSlider.init();
 
     let Slider1 = new Slider('.slider1 img');
     let Slider2 = new Slider('.slider2 img');
@@ -52,10 +16,36 @@ document.addEventListener("DOMContentLoaded", function() {
     Slider5.init();
     Slider6.init();
     Slider7.init();
+  
+    const options = {
+      offset: 10000
+    };
 
-    
-    let mymenu = new menu('.sous-menu', '.menu-icon', '.sous-menu a', '.entete');
-    let myPage = new Page('section', mymenu);
-    myPage.init();
+    inView('.titre img', options).on('enter', function(c) {
+        c.classList.add('inview');
+    }).on('exit', function (c) {
+        c.classList.remove('inview');
+    });
 
+    inView('.explication', options).on('enter', function(c) {
+        c.classList.add('inview');
+    }).on('exit', function (c) {
+        c.classList.remove('inview');
+    });
+
+    inView('.images', options).on('enter', function(c) {
+        c.classList.add('inview');
+    }).on('exit', function(c) {
+        c.classList.remove('inview');
+    });
+
+    inView('video', options).on('enter', function(c) {
+        c.classList.add('inview');
+    }).on('exit', function(c) {
+        c.classList.remove('inview');
+    });
+
+    let menu = new menuDéroulant('.sous-menu', '.menu-icon', '.sous-menu a', 'header');
+    menu.init();
 });
+  

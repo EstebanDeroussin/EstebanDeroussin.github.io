@@ -34,27 +34,22 @@
     src:url('../src/typo/BellGothicStd-Black.otf');
 }
 
-html{
-    scroll-snap-type: y mandatory;
-}
-
 *{
     padding : 0;
     margin : 0;
     z-index: 0;
-
+    
+    box-sizing: border-box;
 }
 
 ::selection{
     background:var(--Noir_elegant_noFocus);
 }
 
-/******** CSS de base *********/
-
 body{
     background-color: var(--Background_color);
     overflow-x: hidden;
-    overflow-y: initial;
+    overflow-y: scroll;
 }
 
 p{
@@ -93,4 +88,44 @@ h2{
 h3{
     font-family: 'Gothic', serif;
     color:var(--Noir_elegant_noFocus);
+}
+
+/******** Animations **********/
+
+@keyframes Animation_Slider {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    95% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes Animation_Image {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    15% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    90% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
 }

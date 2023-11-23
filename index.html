@@ -1,33 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esteban Deroussin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Esteban Deroussin</title>
     <link rel="icon" href="src/logo/Logo_Site.png">
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/download.css">
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="src/in-view-master/dist/in-view.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <section id="Chargement">
-        <div class="jelly"></div>
-        <svg width="0" height="0" class="jelly-maker">
-            <defs>
-                <filter id="uib-jelly-ooze">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="6.25" result="blur"/>
-                    <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze"/>
-                    <feBlend in="SourceGraphic" in2="ooze" />
-                </filter>
-            </defs>
-        </svg>
-        <p>Loading...</p>
+    <header>
+        <a href="index.html" id="container_Logo"><img id="logo_Esteban" src="src/logo/Logo_Esteban.png" alt="Logo"></a>
+    <div>
+        <div class="menu-icon">
+            <span></span>
+        </div>
+        <div class="sous-menu">
+            <a href="#accueil">Accueil</a>
+            <a href="#à_propos">À Propos</a>
+            <a href="#Typographie">Typographie</a>
+            <a href="#Illustration">Illustration</a>
+            <a href="#Branding">Branding</a>
+            <a href="#Design">UI/UX Design</a>
+            <a href="#Motion">Motion</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    </header>
+    <section id="accueil">
+        <div class="Slider">
+            <img src="src/img/Typographie/cover-mockup-paysage.jpg" alt="Création en Typohraphie">
+            <img src="src/img/Illustration/Recette.jpg" alt="Création en Illustration">
+            <img src="src/img/Branding/Magasin.jpg" alt="CRéation enBranding">
+            <img src="src/img/UI:UX Design/Free_Iphone_14_Pro_Mockup_4.jpg" alt="Création en UI/UX Design">
+        </div>
+        <div class="navigation">
+            <div class="btn">
+                <button type="button">Typographie</button>
+                <p>Création de typographies.</p>
+            </div>
+            <div class="btn">
+                <button type="button">Illustration</button>
+                <p></p>
+            </div>
+            <div class="btn">
+                <button type="button">Branding</button>
+                <p>Créations d’identités visuelles.</p>
+            </div>
+            <div class="btn">
+                <button type="button">UI/UX</button>
+                <p>Design de site internet et d’application poursmartphones.</p>
+            </div>
+        </div>
+    </section>
+    <section id="à_propos">
+        <div class="titre">
+            <img src="src/img/Titres/ABOUT_ME_ILLU.png" Alt="Illustration du Titre">
+        </div>
+    </section>
+    <section class="presentation">
+        <h1>Esteban DEROUSSIN</h1>
+        <p>Bonjour et bienvenue dans mon portfolio ! Je m’appelle Esteban Deroussin et je suis né le 26 octobre 2003 à Lyon. J’ai intégré depuis deux ans l’école E.artsup dans la filière direction artistique. Ce site est l’aboutissement de deux ans de travail et de passion. Il vous présente mes meilleurs réalisations dans les différents domaines que j’ai pu expérimenter cette année. J’espère que vous prendrez plaisir à le feuilleter et que cela vous donnera envie d’explorer de nouvelles opportunités créatives avec moi.</p>
+    </section>
+    <section id="Typographie">
+        <div class="titre">
+            <img src="src/img/Titres/Typographie.png" Alt="Illustration du Titre">
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>01.1</h3>
+                <h2>Type Foundry</h2>
+                <p>Création d’une typographie
+                    rétro à partir de plusieurs grilles géométriques
+                    sur illustrator.
+                    Ce projet est le premier que j’ai réalisé dans le cadre de mes cours de typographie cette année.</p>
+            </div>
+            <div class="images">
+                <img src="src/img/Typographie/cover-mockup-paysage.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details_2">
+            <div class="explication">
+                <h3>01.2</h3>
+                <h2>Lettrine</h2>
+                <p>Réalisation d’une lettrine illustrée sur le thème de la musique dans le cadre d’un cours de typographie.La lettre a été réalisée sur Illustrator puis ombres et textures ont été ajoutées sur photoshop.</p>
+            </div>
+            <div class="images">
+                <img src="src/img/Typographie/Mockup_livre.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+    <div class="details">
+        <div class="explication">
+            <h3>01.3</h3>
+            <h2>Monogramme</h2>
+            <p>Ce projet réalisé dans le cadre d’un cours de typographie est un monogramme de mon prénom que j’ai créé sur illustrator. J’ai commencé par designer les lettres «E» et «D» dans le cercle puis je me suis ocupé des ornements.  </p>
+        </div>
+        <div class="slider1">
+            <img src="src/img/Typographie/Monogramme_principal.jpg" loading="lazy" alt="Illustration de projet">
+            <img src="src/img/Typographie/Carte_monogramme.jpg" loading="lazy" alt="Illustration de projet">
+            <img src="src/img/Typographie/Wooden Stamp Mockup.jpg" loading="lazy" alt="Illustration de projet">
+        </div>
+    </div>
+</section>
+
+
+    <section id="Illustration">
+        <div class="titre">
+            <img src="src/img/Titres/Illustration.png" alt="Illustration de projet">
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>02.1</h3>
+                <h2>Le motif</h2>
+                <p>Ce projet a été l'un de mes favoris cette année en illustration. L’objectif était de faire un motif sur le thème de l’automne et de l’intégrer sur différents supports. J’ai pu apprendre une technique permettant de créer un motif répétitif.  </p>
+            </div>
+            <div class="slider2">
+                <img src="src/img/Illustration/Motif.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Illustration/Mokup_Trousse.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Illustration/Mokup_Smartphone.png" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details_2">
+            <div class="explication">
+                <h3>02.2</h3>
+                <h2>Recette</h2>
+                <p>Réalisation d'une illustration de recette de cuisine sur photoshop.</p>
+            </div>
+            <div class="images">
+                <img src="src/img/Illustration/Recette.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
     </section>
 
-    <section id="Presentation">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Développé par Arthur Mathis</p>
+    <section id="Branding">
+        <div class="titre">
+            <img src="src/img/Titres/Branding.png" Alt="Illustration du Titre">
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>03.1</h3>
+                <h2>Louis Vuitton</h2>
+                <p>Ce projet avait pour objectif de revisiter le logo de la marque Louis Vuitton. Il a été très intéressant car il a mêlé deux domaines que j'affectionne énormément : la typographie et le branding. Tout d'abord, il a fallu revisiter la typographie de la marque, puis l'intégrer de manière esthétique sur différents supports de vente.</p>
+            </div>
+            <div class="slider3">
+                <img src="src/img/Branding/Louis_vuitton.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/Magasin.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/Flacon Bottle Mockup.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details_2">
+            <div class="explication">
+                <h3>03.2</h3>
+                <h2>Solenville</h2>
+                <p>Ce projet à été mon tout premier projet de branding complet. L’idée était de représenter la terre et la ville afin de mettre en avant le lien entre les espaces urbains et la biodiversité des sols. </p>
+            </div>
+            <div class="slider4">
+                <img src="src/img/Branding/solenville_V4.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/carte de visite.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/sac_solenville.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/carte de visite verte.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/Terre_solenville.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/carte de visite bleu.png" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/Branding/Declinaisons_silenviolle.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>03.3</h3>
+                <h2>logotype animal</h2>
+                <p>L’objectif dans ce projet était de réaliser le logotype d’un animal en utilisant des formes géométriques.</p>
+            </div>
+            <div class="images">
+                <img src="src/img/Branding/Requin.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
     </section>
 
-    <script src="script/preload.js"></script>
+    <section id="Design">
+        <div class="titre">
+            <img src="src/img/Titres/UX-UI_DESIGN.png" Alt="Illustration du Titre">
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>04.1</h3>
+                <h2>Electropolis</h2>
+                <p>Dans ce projet réalisé avec deux de mes camarades, l'objectif était de créer une identité visuelle forte pour un festival de musique électronique nomade. Nous devions étudier le public cible et définir une approche réfléchie pour captiver ce dernier. Pour ce projet, nous avons choisi d'explorer le caractère psychédélique du festival.</p>
+            </div>
+            <div class="slider5">
+                <img src="src/img/UI:UX Design/affiche_Electro_polis.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/Macbook_Air_Mockup_3.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/page de garde site.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details_2">
+            <div class="explication">
+                <h3>04.2</h3>
+                <h2>Unterlinden</h2>
+                <p>Dans ce projet, il fallait créer une application immersive en réalité augmentée autour du musée Unterlinden et de ses œuvres. J'ai choisi de m'intéresser aux couleurs et d'imaginer un scanner permettant d'en apprendre davantage sur celles-ci dans les différentes œuvres du musée.</p>
+            </div>
+            <div class="slider6">
+                <img src="src/img/UI:UX Design/musee_unterlinden.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/choix oeuvre.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/Free_Iphone_14_Pro_Mockup_4.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/Free_Iphone_14_Pro_Mockup_1.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>04.3</h3>
+                <h2>E.artsup</h2>
+                <p>Lors de mon stage chez E.artsup, j'ai eu l'opportunité de créer des affiches mettant en valeur les réalisations des étudiants de chaque filière. L'objectif était de donner du style aux salles de classe. J'ai également réalisé des stickers pour relier les affiches aux cartels.</p>
+            </div>
+            <div class="slider7">
+                <img src="src/img/UI:UX Design/affiche_DA.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/affiche_motion.jpg" loading="lazy" alt="Illustration de projet">
+                <img src="src/img/UI:UX Design/affiche game.jpg" loading="lazy" alt="Illustration de projet">
+            </div>
+        </div>
+    </section>
+
+    <section id="Motion">
+        <div class="titre">
+            <img src="src/img/Titres/Motion.png" Alt="Illustration du Titre">
+        </div>
+    </section>
+    <section>
+        <div class="details">
+            <div class="explication">
+                <h3>05.1</h3>
+                <h2>Electropolis</h2>
+                <p>Dans ce projet réalisé avec deux de mes camarades, l'objectif était de créer une identité visuelle forte pour un festival de musique électronique nomade. Nous devions étudier le public cible et définir une approche réfléchie pour captiver ce dernier. Pour ce projet, nous avons choisi d'explorer le caractère psychédélique du festival.</p>
+            </div>
+            <video controls loop class="creation">
+                <source src="src/img/Motion/Animation_affiche.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+    </section>
+    <section>
+        <div class="details_2">
+            <div class="explication">
+                <h3>05.2</h3>
+                <h2>Publicité Bose</h2>
+                <p>Dans ce projet, l'objectif était de réaliser une publicité en motion design pour un casque audio. J'ai choisi d'adopter un style épuré et sobre que j'apprécie énormément, en m'inspirant de l'esthétique d'Apple. La musique utilisée est tirée d'une publicité de la marque.</p>
+            </div>
+            <video controls loop class="creation">
+                <source src="src/img/Motion/Animatio_Casque.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+    </section>
+
+    <section id="contact">
+        <footer>
+            <p>Développé en collaboration avec <b>Arthur MATHIS</b> (Web Développeur)</p>
+            <div class="btnContact">
+                <a href="mailto:esteban.deroussin@icloud.com" target="_blank">
+                    <img src="src/logo/email_noir.png" loading="lazy" alt="Logo Mail">
+                </a>
+                <a href="https://www.instagram.com/esteban_drs1/" target="_blank">
+                    <img src="src/logo/insta_noir.png" loading="lazy" alt="Logo Instragram">
+                </a>
+                <a href="https://www.tiktok.com/@esteban.drs1" target="_blank">
+                    <img src="src/logo/tiktok_noir.png" loading="lazy" alt="Logo TikTok">
+                </a>
+            </div>
+            <div class="infoContact">
+                <h2>Contacts</h2>
+                <p>esteban.deroussin@icloud.com</p>
+                <p>06.15.23.27.19</p>
+            </div>
+        </footer>
+        <div class="rectangle"></div>
+    </section>
+
+    <script src="script/app.js"></script>
+    <script src="script/myComponents.js"></script>
 </body>
 </html>
