@@ -166,7 +166,7 @@ class menuDéroulant{
             });
             setTimeout(() => {
                 sections.forEach(c => { c.style.scrollSnapAlign = "start"; });
-            }, 1000);
+            }, 10);
         });
     }
 }
