@@ -637,11 +637,21 @@ section {
 
             backdrop-filter: none;
             background-color: var(--Background_color);
+            border: none;
 
             a{
                 text-transform: none;
                 font-size: var(--taille-police-menu);
                 padding: 10px 40px;
+            }
+        }
+
+        &.not-focused{
+            border: none;
+
+            & > a{
+                display: none;
+                border: none;
             }
         }
     }

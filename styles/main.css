@@ -542,11 +542,19 @@ section .details_2 .explication p, section .details_2 .explication h2 {
     top: 54px;
     backdrop-filter: none;
     background-color: var(--Background_color);
+    border: none;
   }
   header .sous-menu a {
     text-transform: none;
     font-size: var(--taille-police-menu);
     padding: 10px 40px;
+  }
+  header.not-focused {
+    border: none;
+  }
+  header.not-focused > a {
+    display: none;
+    border: none;
   }
   section {
     scroll-padding-top: 54px;
