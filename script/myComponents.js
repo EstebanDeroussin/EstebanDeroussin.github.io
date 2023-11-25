@@ -159,12 +159,12 @@ class menuDéroulant{
         });
 
         const sections = document.querySelectorAll('section');
-        sections.forEach(c => { c.style.scrollSnapAlign = "none"; });
         this.liens.forEach((c) => {
+            sections.forEach(c => { c.style.scrollSnapAlign = "none"; });
             c.addEventListener('click', () => {
                 this.onSelectionne(c);
             });
+            sections.forEach(c => { c.style.scrollSnapAlign = "start"; });
         });
-        sections.forEach(c => { c.style.scrollSnapAlign = "start"; });
     }
 }
