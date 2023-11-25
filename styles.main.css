@@ -358,8 +358,10 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   /*transform: translateX(5%);*/
   opacity: 0;
   transform: opacity 0.5s;
+  /*transition: 3s transform, 3s opacity;*/
 }
 #à_propos img.inview {
+  /*transform: translateX(0%);*/
   opacity: 1;
 }
 
@@ -474,20 +476,18 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   #contact footer .infoContact {
     text-align: left;
   }
-  section {
-    height: 100vh;
-  }
   section .details, section .details_2 {
     flex-direction: column-reverse;
     justify-content: start;
-    padding-top: 80px;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
   section .details .explication, section .details_2 .explication {
     width: 100%;
     max-height: 35%;
   }
   section .details .explication p, section .details_2 .explication p {
-    max-width: 80vw;
+    max-width: 60vw;
     width: 100%;
   }
   section .details .images, section .details .slider1, section .details .slider2, section .details .slider3, section .details .slider4, section .details .slider5, section .details .slider6, section .details .slider7, section .details_2 .images, section .details_2 .slider1, section .details_2 .slider2, section .details_2 .slider3, section .details_2 .slider4, section .details_2 .slider5, section .details_2 .slider6, section .details_2 .slider7 {
@@ -506,6 +506,9 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   }
 }
 @media screen and (max-width: 780px) {
+  section {
+    height: 100vh;
+  }
   section .details .explication, section .details_2 .explication {
     max-height: 50%;
   }
@@ -520,7 +523,7 @@ section .details_2 .explication p, section .details_2 .explication h2 {
     max-width: 100%;
   }
   section .details .images, section .details video, section .details .slider1, section .details .slider2, section .details .slider3, section .details .slider4, section .details .slider5, section .details .slider6, section .details .slider7, section .details_2 .images, section .details_2 video, section .details_2 .slider1, section .details_2 .slider2, section .details_2 .slider3, section .details_2 .slider4, section .details_2 .slider5, section .details_2 .slider6, section .details_2 .slider7 {
-    max-height: 60%;
+    max-height: 50%;
   }
 }
 @media screen and (max-width: 780px) {
@@ -551,56 +554,7 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   section {
     scroll-padding-top: 54px;
     padding-top: 54px;
-  }
-  section .details,
-  section .details_2 {
-    padding: 0;
-  }
-  section .details .explication,
-  section .details_2 .explication {
-    padding: 0 5%;
     padding-bottom: 54px;
-  }
-  section .details .images, section .details video, section .details .slider1, section .details .slider2, section .details .slider3, section .details .slider4, section .details .slider5, section .details .slider6, section .details .slider7,
-  section .details_2 .images,
-  section .details_2 video,
-  section .details_2 .slider1,
-  section .details_2 .slider2,
-  section .details_2 .slider3,
-  section .details_2 .slider4,
-  section .details_2 .slider5,
-  section .details_2 .slider6,
-  section .details_2 .slider7 {
-    width: 100%;
-  }
-  section .details .slider1 img, section .details .slider2 img, section .details .slider3 img, section .details .slider4 img, section .details .slider5 img, section .details .slider6 img, section .details .slider7 img,
-  section .details_2 .slider1 img,
-  section .details_2 .slider2 img,
-  section .details_2 .slider3 img,
-  section .details_2 .slider4 img,
-  section .details_2 .slider5 img,
-  section .details_2 .slider6 img,
-  section .details_2 .slider7 img {
-    animation: infinite 6s Animation_Image;
-    transform: translateY(10%);
-    will-change: transform;
-  }
-  section .details .slider1.inview img, section .details .slider2.inview img, section .details .slider3.inview img, section .details .slider4.inview img, section .details .slider5.inview img, section .details .slider6.inview img, section .details .slider7.inview img,
-  section .details_2 .slider1.inview img,
-  section .details_2 .slider2.inview img,
-  section .details_2 .slider3.inview img,
-  section .details_2 .slider4.inview img,
-  section .details_2 .slider5.inview img,
-  section .details_2 .slider6.inview img,
-  section .details_2 .slider7.inview img {
-    transform: translateY(0);
-    transition: none;
-  }
-  section .details .explication h3 {
-    margin: 0 0 0 10%;
-  }
-  section .details_2 .explication h3 {
-    margin: 0 10% 0 0;
   }
   #accueil {
     justify-content: flex-start;
@@ -637,4 +591,4 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=styles.main.css.map */
