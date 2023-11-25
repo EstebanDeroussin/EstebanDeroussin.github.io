@@ -164,7 +164,9 @@ class menuDéroulant{
             c.addEventListener('click', () => {
                 this.onSelectionne(c);
             });
-            sections.forEach(c => { c.style.scrollSnapAlign = "start"; });
+            setTimeout(() => {
+                sections.forEach(c => { c.style.scrollSnapAlign = "start"; });
+            }, 500);
         });
     }
 }
