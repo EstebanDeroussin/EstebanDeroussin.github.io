@@ -606,10 +606,10 @@ section .details_2 .explication p, section .details_2 .explication h2 {
     transition: none;
   }
   section .details .explication h3 {
-    margin: 0 0 0 10%;
+    margin: 0 0 0 15%;
   }
   section .details_2 .explication h3 {
-    margin: 0 10% 0 0;
+    margin: 0 15% 0 0;
   }
   #accueil {
     justify-content: flex-start;
