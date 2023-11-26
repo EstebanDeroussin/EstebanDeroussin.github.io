@@ -30,7 +30,7 @@ header .menu-icon {
   width: var(--dimension_logo);
   height: var(--dimension_logo);
   border-radius: 50%;
-  background-color: var(--Background_color);
+  background-color: transparent;
   transition: transform 0.5s;
 }
 header .menu-icon span {
@@ -67,7 +67,7 @@ header .menu-icon:hover span::after {
   transform: translateY(8px);
 }
 header .menu-icon.is-opened span {
-  background: transparent;
+  background-color: transparent;
 }
 header .menu-icon.is-opened span::before {
   transform: translateY(0) rotate(45deg);
@@ -480,7 +480,6 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   section .details, section .details_2 {
     flex-direction: column-reverse;
     justify-content: start;
-    padding-top: 80px;
   }
   section .details .explication, section .details_2 .explication {
     width: 100%;
@@ -503,24 +502,6 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   }
   section .details video.inview, section .details_2 video.inview {
     transform: translateY(0);
-  }
-}
-@media screen and (max-width: 780px) {
-  section .details .explication, section .details_2 .explication {
-    max-height: 50%;
-  }
-  section .details .explication h3, section .details_2 .explication h3 {
-    transform: rotate(270deg);
-  }
-  section .details .explication h2, section .details_2 .explication h2 {
-    padding: 0;
-  }
-  section .details .explication p, section .details_2 .explication p {
-    padding: 0;
-    max-width: 100%;
-  }
-  section .details .images, section .details video, section .details .slider1, section .details .slider2, section .details .slider3, section .details .slider4, section .details .slider5, section .details .slider6, section .details .slider7, section .details_2 .images, section .details_2 video, section .details_2 .slider1, section .details_2 .slider2, section .details_2 .slider3, section .details_2 .slider4, section .details_2 .slider5, section .details_2 .slider6, section .details_2 .slider7 {
-    max-height: 60%;
   }
 }
 @media screen and (max-width: 780px) {
@@ -558,7 +539,7 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   }
   section {
     scroll-padding-top: 54px;
-    padding-top: 54px;
+    height: 100vh;
   }
   section .details,
   section .details_2 {
@@ -566,8 +547,27 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   }
   section .details .explication,
   section .details_2 .explication {
+    max-height: 50%;
     padding: 0 5%;
-    padding-bottom: 54px;
+    padding-bottom: 55px;
+  }
+  section .details .explication h3,
+  section .details_2 .explication h3 {
+    transform: rotate(270deg);
+  }
+  section .details .explication h2,
+  section .details_2 .explication h2 {
+    padding: 0;
+  }
+  section .details .explication p,
+  section .details_2 .explication p {
+    padding: 0;
+    max-width: 100%;
+  }
+  section .details .images, section .details video,
+  section .details_2 .images,
+  section .details_2 video {
+    padding-top: 55px;
   }
   section .details .images, section .details video, section .details .slider1, section .details .slider2, section .details .slider3, section .details .slider4, section .details .slider5, section .details .slider6, section .details .slider7,
   section .details_2 .images,
@@ -580,6 +580,7 @@ section .details_2 .explication p, section .details_2 .explication h2 {
   section .details_2 .slider6,
   section .details_2 .slider7 {
     width: 100%;
+    max-height: 60%;
   }
   section .details .slider1 img, section .details .slider2 img, section .details .slider3 img, section .details .slider4 img, section .details .slider5 img, section .details .slider6 img, section .details .slider7 img,
   section .details_2 .slider1 img,

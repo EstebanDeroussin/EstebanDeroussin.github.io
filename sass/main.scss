@@ -35,7 +35,7 @@ header{
         height: var(--dimension_logo);
     
         border-radius: 50%;
-        background-color: var(--Background_color);
+        background-color: transparent;
         transition: transform 0.5s;
     
         span{
@@ -84,7 +84,7 @@ header{
         }
     
         &.is-opened span{
-            background: transparent;
+            background-color: transparent;
     
             &::before{
                 transform: translateY(0) rotate(45deg);
@@ -539,7 +539,6 @@ section {
         & .details_2{
             flex-direction: column-reverse;
             justify-content: start;
-            padding-top: 80px;
 
             & .explication{
                 width: 100%;
@@ -575,42 +574,6 @@ section {
                     transform: translateY(0);
                 }
             }
-        }
-    }
-}
-
-@media screen and (max-width: 780px){
-    section{
-        & .details, 
-        & .details_2{
-            & .explication{
-                max-height: 50%;
-
-                h3{
-                    transform: rotate(270deg);
-                }
-
-                h2{
-                    padding: 0;
-                }
-
-                p{
-                    padding: 0;
-                    max-width: 100%;
-                }
-            }
-
-            & .images,
-            & video,
-            & .slider1,
-            & .slider2,
-            & .slider3,
-            & .slider4,
-            & .slider5,
-            & .slider6,
-            & .slider7{
-                max-height: 60%;
-            }; 
         }
     }
 }
@@ -658,15 +621,35 @@ section {
 
     section{
         scroll-padding-top: 54px;
-        padding-top: 54px;
+        height: 100vh;
 
         .details, 
         .details_2{
             padding: 0;
 
             & .explication{
+                max-height: 50%;
+
                 padding: 0 5%;
-                padding-bottom: 54px;
+                padding-bottom: 55px;
+
+                h3{
+                    transform: rotate(270deg);
+                }
+
+                h2{
+                    padding: 0;
+                }
+
+                p{
+                    padding: 0;
+                    max-width: 100%;
+                }
+            }
+
+            & .images, 
+            & video{
+                padding-top: 55px;
             }
 
             & .images,
@@ -679,6 +662,7 @@ section {
             & .slider6,
             & .slider7{
                 width: 100%;
+                max-height: 60%;
             }
 
             & .slider1,
