@@ -12,6 +12,9 @@ class Slider {
         console.log("Liste des puces");
         console.log(this.puces);
 
+        // On initialise l'index
+        this.currentIndex = 0;
+
         // On paramètre l'interval du slider
         if(typeof intervalDuration === 'integer')
             this.intervalDuration = intervalDuration;
@@ -20,9 +23,6 @@ class Slider {
     }
 
     init() {
-        // On initialise l'index
-        this.currentIndex = 0;
-        this.setFocus(this.currentIndex);
         // On empêche le défilment manuel
         this.parent.style.overflowX = 'hidden';
 
@@ -107,8 +107,8 @@ class Slider {
         else 
             this.slides[index - 1].classList.remove('visible');
 
-            // On sélectionne la nouvelle image
-        this.puces[index].classList.add('visible');
+        // On sélectionne la nouvelle image
+        this.slides[index].classList.add('visible');
     }
     /// Méthode sélectionnant une page du slider
     setFocus(index) {

@@ -251,6 +251,37 @@ section h1 {
     box-shadow: inset 0 55px 0 0 var(--black);
 }
 
+.sliders  {
+    left: 12.7%;
+
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+
+    margin-bottom: 30px;
+}
+.sliders .slider {
+    width: 65%;
+    height: auto;
+    margin-top: var(--margin);
+    margin-bottom: 80px;
+}
+.sliders .slider img {
+    display: none;
+}
+.sliders .slider img.visible {
+    display: block;
+}
+.sliders .slider-puces {
+    margin-top: auto;
+    padding-bottom: 80px;
+}
+.sliders  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+} 
+
 /******** Tapis roulant ********/
 #tapis-roulant main {
     display: flex;
@@ -560,39 +591,7 @@ section h1 {
 }
 #Meg_tech .sliders::after {
     top: 0; 
- }
-#Meg_tech .sliders  {
-    left: 12.7%;
-
-    display: flex;
-    width: 87.4%;
-    height: fit-content;
-
-    margin-bottom: 30px;
 }
-#Meg_tech .sliders .slider {
-    width: 65%;
-    height: auto;
-    margin-top: var(--margin);
-    margin-bottom: 80px;
-}
-#Meg_tech .sliders .slider img {
-    display: none;
-}
-#Meg_tech .sliders .slider img.visible {
-    display: block;
-}
-#Meg_tech .sliders .slider-puces {
-    margin-top: auto;
-    padding-bottom: 80px;
-}
-#Meg_tech .sliders  p {
-    padding-top: 13px;
-    width: 15%;
-    font-size:var(--police-small);
-} 
-
-
 
 
 /******** Foire aux oignons ********/

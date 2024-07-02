@@ -9,6 +9,14 @@ setInterval(() => {
 const calendrier = document.getElementById('calendrier');
 calendrier.textContent = localDate.toString();
 
+// Ajout du Slider (La Peur)
+const la_peur_slider = new Slider('la_peur', '.slider img', '#la_peur .slider-puces li');
+la_peur_slider.init();
+
+// Ajout du Slider (Meg Tech)
+const meg_tech_slider = new Slider('meg_tech', '.slider img', '#meg_tech .slider-puces li');
+meg_tech_slider.init();
+
 
 // Ajout de l'animation du rectangle
 inView('.rectangle').on('enter', function(c){
@@ -47,7 +55,3 @@ const observer = new MutationObserver((mutationsList) => {
         }
     }
 });
-
-// Ajout du Slider (Meg Tech)
-const meg_techslider = new Slider('meg_tech', '.slider img', '#meg_tech .slider-puces li');
-meg_techslider.init();
