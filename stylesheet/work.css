@@ -1,0 +1,1051 @@
+@font-face {
+    font-family: "Montreal_italic";
+    src: url("../assets/typo/Neue Montreal/PPNeueMontreal-ThinItalic.ttf");
+}
+@font-face {
+    font-family: "Montreal_Medium";
+    src: url("../assets/typo/Neue Montreal/PPNeueMontreal-Medium.ttf");
+}
+
+/******** Css de base ********/
+section {
+    scroll-margin-top: 50px;
+}
+body {
+    width: 100dvw;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+.rectangle {
+    margin-top: 20px;
+    width: 100%;
+    height: 55px;
+    will-change: box-shadow;
+    transition: box-shadow ease 600ms;
+  }
+
+.rectangle.active {
+    box-shadow: inset 0 55px 0 0 var(--black);
+    margin-top: 20px;
+}
+/******** Css du menu ********/
+#menu::before {
+    background-color: white;
+}
+
+section h1 {
+    position: relative;
+    top: -25px;
+    display: flex;
+
+    padding-left: 20px;
+    font-size: 8.8em;
+    font-family: "Montreal_Medium";
+}
+
+
+/******** CSS du #Work ********/
+#work {
+    display: flex;
+    width: calc(100% - 2 * var(—margin));
+    height: 60vh;
+    min-height: 500px;
+    padding-top: 69px;
+    padding-right: var(--margin);
+    padding-left: var(--margin);
+    background-color: var(--black);   
+}
+#work::after {
+    transform: translateY(15px); 
+}
+#work * {
+    color: var(--white);
+}
+#work .left {
+    padding-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+    padding-bottom: var(--margin) 
+}
+#work .left::after {
+    height: 100%;
+    width: 1px;
+    background-color: var(--white);
+    top: 0;
+    right: 0;
+
+}
+#work .left article * {
+    font-family: "Supply";
+  font-weight: var(--police-weigth-small);
+  font-size: var(--police-small);
+}
+#work .left div {
+    display: flex;
+    gap:10dvw;
+}
+#work .left div * {
+  font-size: var(--police-small);
+}
+#work .left article {
+    display: flex;
+    flex-direction: column;
+
+}
+#work .left article nav{
+  padding-top: 25px;
+  padding-bottom: 8px;
+
+}
+#work .left article nav > a {
+    font-family: "Supply";
+    font-weight: 200;
+    font-size: var(--police-extra-small);
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 8px;
+    transition: color ease 250ms, background-color ease 250ms;
+    will-change: color, background-color;
+}
+#work .left article nav > a:hover {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+/******** Project container de base ********/
+.projet-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+
+    width: calc(100% - 2 * var(--margin));
+    height: fit-content;
+
+    margin: 0 var(--margin);
+    padding-top: var(--margin);
+}
+.projet-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+
+    padding-top: 10px;
+    margin-bottom: -10px;
+}
+.projet-container header p {
+    font-size:var(--police-small);
+}
+.projet-container header p:first-of-type {
+    position: relative;
+    padding-left: 25px;
+}
+.projet-container header p:first-of-type::before {
+    content: '';
+    position: absolute;
+    left: 0;
+
+    display: block;
+    width: var(--police-small);
+    height: var(--police-small);
+
+    border-radius: 50%;
+    background-color: var(--black);
+}
+.projet-container article {
+    position: relative;
+    width: 100%;
+    height: 41dvh;
+}
+.projet-container article img {
+    display: block;
+    width: 100%;
+    height: calc(41dvh - 13px);
+
+    object-fit: cover;
+}
+.projet-container article aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    width: 100%;
+    height: calc(100% - 13px);
+
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+}
+.projet-container article aside div {
+    display: flex;
+    width: 40%;
+    color: white;
+    padding-top: 23px;
+}
+.projet-container article aside div p,
+.projet-container article aside div ul {
+    width: 50%;
+}
+.projet-container article aside div p {
+    padding-left: 50%;
+    font-size:var(--police-small);
+}
+.projet-container article aside div ul {
+    padding-left: 28%;
+}
+.projet-container article aside div ul li {
+    width: 100%;
+    font-size:var(--police-small);
+}
+.projet-container article h2 {
+    display: flex;
+    z-index: 1;
+    margin-top: 20px;
+
+    color: white;
+    font-family: "Montreal";
+    font-size: 8.8em ;
+    line-height: 0.84;
+    font-family: "Montreal_Medium";   
+}
+.projet-container content h3 {
+    font-size: 4.8em;
+    line-height: 1;
+    padding-left: 65px;
+    padding-right: 65px;
+    margin-bottom: 10px;
+    text-align: center;
+  
+}
+.projet-container content h3 i {
+    font-family: "Montreal_italic";
+    font-weight: 100; 
+    font-size: 1em;
+}
+
+.projet-container .rectangle {
+    display: block;
+    width: 100%;
+    height: 55px;
+
+    will-change: box-shadow;
+    transition: box-shadow ease 600ms;
+}
+
+.projet-container main .lignes::after {
+    top: 0; 
+}
+
+.projet-container .rectangle.active {
+    box-shadow: inset 0 55px 0 0 var(--black);
+}
+
+/******** Tapis roulant ********/
+#tapis-roulant main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+#tapis-roulant main > p {
+    width: 20%;
+    margin-top: var(--margin);
+    font-size:var(--police-small);
+}
+#tapis-roulant main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding-top: var(--margin);
+}
+#tapis-roulant main > div > p {
+    width: 15%;
+    font-size:var(--police-small);
+}
+#tapis-roulant main > div > video {
+    width: 38%;
+    height: 100%;
+    /*margin-top: 20px;*/
+    margin-bottom: 80px;
+}
+#tapis-roulant main > div > div {
+    display: flex;
+    width: 55%;
+    /*margin: var(--margin) 0 0 10%;*/
+    margin-left: 10%;
+    height: fit-content;
+}
+#tapis-roulant main > div > div::after {
+    width: 100%;
+}
+#tapis-roulant main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#tapis-roulant main > div > div > img {
+    width: 80%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+/******** Au delà de la peur ********/
+#Au-dela-de-la-peur > header::after {
+    top: 0;
+}
+#Au-dela-de-la-peur main .lignes::after {
+    top: 0; 
+}
+#Au-dela-de-la-peur main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+}
+#Au-dela-de-la-peur main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Au-dela-de-la-peur main > div {
+    width: 80%;
+}
+#Au-dela-de-la-peur main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Au-dela-de-la-peur main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Au-dela-de-la-peur main > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Au-dela-de-la-peur main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Au-dela-de-la-peur main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Au-dela-de-la-peur main > div > div > img {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+
+/******** La Vuelta ********/
+
+#La-Vuelta > header::after {
+    top: 0;
+}
+#La-Vuelta main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#La-Vuelta main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#La-Vuelta main > div {
+    width: 80%;
+    }
+#La-Vuelta main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#La-Vuelta main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#La-Vuelta main > div > video {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#La-Vuelta main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#La-Vuelta main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#La-Vuelta main > div > div > p1 {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+    font-size: var(--police-small);
+    padding-right: 40px;
+}
+#La-Vuelta .Billboard_affiches::after {
+    top: 0; 
+ }
+#La-Vuelta .Billboard_affiches  {
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+    
+    margin-bottom: 30px;
+    left: 12.7%
+}
+#La-Vuelta .Billboard_affiches  img {
+    width: 65%;
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+#La-Vuelta .Billboard_affiches  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+}
+.Sac_Gourde .lignes::after {
+    top: 0; 
+}
+.Sac_Gourde {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+.Sac_Gourde > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+.Sac_Gourde > div {
+    width: 80%;
+    }
+.Sac_Gourde > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+.Sac_Gourde > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Sac_Gourde > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+.Sac_Gourde > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+.Sac_Gourde > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Sac_Gourde > div > div > img {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+
+
+
+/******** Meg_tech ********/
+
+#Meg_tech > header::after {
+    top: 0;
+}
+#Meg_tech main .lignes::after {
+    top: 0; 
+}
+#Meg_tech main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#Meg_tech main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Meg_tech main > div {
+    width: 80%;
+    }
+#Meg_tech main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Meg_tech main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Meg_tech main > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Meg_tech main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Meg_tech main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Meg_tech main > div > div > p1 {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+    font-size: var(--police-small);
+    padding-right: 40px;
+}
+#Meg_tech main > div > div > p1 b {
+    font-family: "Montreal Bold";
+    font-size: var(--police-small);
+}
+#Meg_tech .sliders::after {
+    top: 0; 
+ }
+#Meg_tech .sliders  {
+    left: 12.7%;
+
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+
+    margin-bottom: 30px;
+}
+#Meg_tech .sliders .slider {
+    width: 65%;
+    height: auto;
+    margin-top: var(--margin);
+    margin-bottom: 80px;
+}
+#Meg_tech .sliders .slider img {
+    display: none;
+}
+#Meg_tech .sliders .slider img.visible {
+    display: block;
+}
+#Meg_tech .sliders .slider-puces {
+    margin-top: auto;
+    padding-bottom: 80px;
+}
+#Meg_tech .sliders  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+} 
+
+
+
+
+/******** Foire aux oignons ********/
+
+#Foire_aux_oignons > header::after {
+    top: 0;
+}
+
+#Foire_aux_oignons main .lignes::after {
+    top: 0; 
+}
+#Foire_aux_oignons main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#Foire_aux_oignons main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Foire_aux_oignons main > div {
+    width: 80%;
+    }
+#Foire_aux_oignons main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Foire_aux_oignons main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Foire_aux_oignons main > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Foire_aux_oignons main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Foire_aux_oignons main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Foire_aux_oignons main > div > div > p1 {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+    font-size: var(--police-small);
+    padding-right: 40px;
+}
+#Foire_aux_oignons main > div > div > p1 b {
+    font-family: "Montreal Bold";
+    font-size: var(--police-small);
+}
+#Foire_aux_oignons .Images_solo::after {
+    top: 0; 
+ }
+#Foire_aux_oignons .Images_solo  {
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+    margin-bottom: 30px;
+    left: 12.7%
+}
+#Foire_aux_oignons .Images_solo  img {
+    width: 65%;
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+#Foire_aux_oignons .Images_solo  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+} 
+
+
+
+/******** Les Vielles Charrues ********/
+
+#Les_vielles > header::after {
+    top: 0;
+}
+#Les_vielles main .lignes::after {
+    top: 0; 
+}
+#Les_vielles main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#Les_vielles main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Les_vielles main > div {
+    width: 80%;
+    }
+#Les_vielles main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Les_vielles main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Les_vielles main > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Les_vielles main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Les_vielles main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Les_vielles main > div > div > p1 {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+    font-size: var(--police-small);
+    padding-right: 40px;
+}
+#Les_vielles main > div > div > p1 b {
+    font-family: "Montreal Bold";
+    font-size: var(--police-small);
+}
+#Les_vielles .sliders::after {
+    top: 0; 
+ }
+#Les_vielles .sliders  {
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+    margin-bottom: 30px;
+    left: 12.7%
+}
+#Les_vielles .sliders  img {
+    width: 65%;
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+#Les_vielles .sliders  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+} 
+.Gourde_Sac .lignes::after {
+    top: 0; 
+}
+.Gourde_Sac {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+.Gourde_Sac > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+.Gourde_Sac > div {
+    width: 80%;
+    }
+.Gourde_Sac > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+.Gourde_Sac > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Gourde_Sac > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+.Gourde_Sac > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+.Gourde_Sac > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Gourde_Sac > div > div > img {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+.Sac_T-shirt .lignes::after {
+    top: 0; 
+}
+.Sac_T-shirt {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+.Sac_T-shirt > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+.Sac_T-shirt > div {
+    width: 80%;
+    }
+.Sac_T-shirt > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+.Sac_T-shirt > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Sac_T-shirt > div > img {
+    width: 38%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+.Sac_T-shirt > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+.Sac_T-shirt > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+.Sac_T-shirt > div > div > img {
+    width: 65%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+
+
+/******** Electro Polis  ********/
+
+#Electro_polis  > header::after {
+    top: 0;
+}
+
+#Electro_polis main .lignes::after {
+    top: 0; 
+}
+#Electro_polis main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#Electro_polis main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Electro_polis main > div {
+    width: 80%;
+    }
+#Electro_polis main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Electro_polis main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Electro_polis main > div > video {
+    width: 50%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Electro_polis main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Electro_polis main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Electro_polis main > div > div > img {
+    width: 80%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+#Electro_polis .Video_site::after {
+    top: 0; 
+ }
+#Electro_polis .Video_site  {
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+    margin-bottom: 30px;
+    left: 12.7%
+}
+#Electro_polis .Video_site  video {
+    width: 80%;
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+#Electro_polis .Video_site  p {
+    padding-top: 13px;
+    width: 12.5%;
+    font-size:var(--police-small);
+} 
+
+
+/******** Louis Vuitton ********/
+
+#Louis_Vuitton > header::after {
+    top: 0;
+}
+
+#Louis_Vuitton main .lignes::after {
+    top: 0; 
+}
+#Louis_Vuitton main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    }
+#Louis_Vuitton main > p {
+    font-family: "Montreal";
+    font-size:var(--police-small);
+    width: 20%;
+    margin-top: 40px;
+}
+#Louis_Vuitton main > div {
+    width: 80%;
+    }
+#Louis_Vuitton main > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: var(--margin);
+}
+
+#Louis_Vuitton main > div > p {
+    width: 15%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Louis_Vuitton main > div > img {
+    width: 45%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+#Louis_Vuitton main > div > div {
+    display: flex;
+    width: 55%;
+    margin: var(--margin) 0 0 10%;
+    height: fit-content;
+    }
+#Louis_Vuitton main > div > div > p {
+    width: 35%;
+    margin-top: 20px;
+    font-size:var(--police-small);
+}
+#Louis_Vuitton main > div > div > img {
+    width: 77%;
+    height: auto ;
+    margin-top: 20px;
+    object-fit: cover;
+}
+#Louis_Vuitton .Enseigne::after {
+    top: 0; 
+ }
+#Louis_Vuitton .Enseigne  {
+    display: flex;
+    width: 87.4%;
+    height: fit-content;
+    
+    margin-bottom: 30px;
+    left: 12.7%
+}
+#Louis_Vuitton .Enseigne  img {
+    width: 65%;
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+#Louis_Vuitton .Enseigne  p {
+    padding-top: 13px;
+    width: 15%;
+    font-size:var(--police-small);
+}
+
+
+/******** Contact Work *********/
+
+#contact {
+    padding: 0 var(--margin);
+    margin-bottom: var(--margin);
+}
+
+#galerie {
+    background-color: rgba(0, 0, 0, 0.4);
+  }

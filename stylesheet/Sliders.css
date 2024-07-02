@@ -1,0 +1,29 @@
+.slider {
+    display: flex;
+    overflow: hidden;
+}
+.slider img {
+    width: 100%;
+    object-fit: cover;
+}
+.slider-puces {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--margin) * 2 / 3);
+
+    width: fit-content;
+    padding: var(--margin) calc(var(--margin) / 2);
+    z-index: 10;
+}
+.slider-puces li {
+    width: var(--police-extra-small);
+    height: var(--police-extra-small);
+
+    border-radius: 50%;
+    border: 2px solid var(--black);
+}
+.slider-puces li.visible {
+    background-color: var(--black);
+}

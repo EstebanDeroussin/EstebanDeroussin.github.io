@@ -1,0 +1,31 @@
+body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+@keyframes firstLogo {
+  0%, 50% {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 6em;
+    width: auto;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    position: fixed;
+    top: calc(var(--police-small) + var(--margin) + 50px);
+    left: var(--margin);
+    height: calc(50dvh - 150px);
+    width: auto;
+    transform: none;
+  }
+}
+img {
+  position: fixed;
+  top: calc(var(--police-small) + 50px + var(--margin));
+  width: calc(1.48 * (50dvh - 150px));
+  animation: firstLogo 2s ease forwards;
+}
+
+/*# sourceMappingURL=open_app.css.map */

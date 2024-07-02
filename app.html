@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Esteban Deroussin</title>
+    <link rel="icon" href="assets/img/logo/logo_noir.png">
+
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <link rel="stylesheet" href="stylesheet/main.css">
+    <link rel="stylesheet" href="stylesheet/AnimateItems.css">
+
+    <script src="scripts/object/in-view.min.js"></script>
+    <script src="scripts/object/simpleParallax.js"></script>
+    <script src="scripts/object/AnimateItems.js"></script>
+    <script src="scripts/object/ScrollMagic min.js"></script>
+    <script src="scripts/object/Sliders.js"></script>
+</head>
+<body>
+     <!-- Section Menu -->
+    <nav id="menu" class="lignes">
+        <span></span>
+        <span></span>
+        <section id="logo">
+            <img src="assets/img/logo/logo_noir.png">
+            <p>Graphic Designer</p>
+        </section>
+        <section id="sous-menu">
+            <a href="work.html">Work</a>
+            <p>/</p>
+            <a href="#contact">Contact</a>
+            <p>/</p>
+            <a href="index.html">Home</a>
+        </section>
+        <a id="galerieButton">Galerie</a>
+        <section id="time">
+            <img src="assets/img/logo/Logo_Horloge.png">
+            <p id="horloge">hh : mm : ss</p>
+        </section>
+        <p id="calendrier">Mer 3 avril</p>
+    </nav>
+     <!-- Section Entete -->
+    <div id="entete" class="lignes">
+        <div class="entete_margin">
+
+        </div>
+        <section class="section_logo">
+            <img src="assets/img/logo/logo_noir.png" alt="logo noir">
+            <img class="second-logo" src="assets/img/logo/logo_blanc.png" alt="logo blanc">
+        </section>
+        <div class="rectangle"></div>
+    </div>
+     <!-- Section Menu de navigation -->
+    <div id="menu_de_navigation" class="lignes">
+        <section class="left">
+            <article>
+                <p class="fade-in">Mes domaines de compétences</p>
+                <nav>
+                    <a class="fade-in dev_button" href="work.html#Louis_Vuitton">Typographie</a>
+                    <a class="fade-in dev_button" href="work.html#tLa_Vuelta">Motion Design</a>
+                    <a class="fade-in dev_button" href="work.html#Meg_tech">UX/UI</a>
+                    <a class="fade-in dev_button" href="work.html#Les_vielles">Branding</a>
+                    <a class="fade-in dev_button" href="work.html#tapis-roulant">3d</a>
+                </nav>
+            </article>
+            <div>
+                <p class="fade-in">Projets :</p>
+                <ul>
+                    <li class="fade-in"><a herf="#">01_La Vuelta</a></li>
+                    <li class="fade-in"><a herf="#">02_Tapis Roulant</a></li>
+                    <li class="fade-in"><a herf="#">03_Les Vielles Charrues</a></li>
+                    <li class="fade-in"><a herf="#">04_Au delà de la Peur</a></li>
+                    <li class="fade-in"><a herf="#">05_Meg Technologie</a></li>
+                    <li class="fade-in"><a herf="#">06_Foire aux Oignons</a></li>
+                    <li class="fade-in"><a herf="#">07_Louis Vuitton</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="right">
+            <article>
+                <h1 class="opacity">Esteban_</h1>
+                <h1 class="opacity">GraphicDesigner</h1>
+            </article>
+            <div class="fade-in">
+                <p>scroll pour découvrir</p>
+                <span></span>
+            </div>
+        </section>
+    </div>
+    <!-- Section About me -->
+    <section id="about_me" class="lignes">
+        <p>About me</p>
+        <img src="assets/img/accueil_esteban.png" alt="protrait d'Esteban" class="parallax">
+        <h1 class="fade-in">Bonjour et bienvenue dans mon portfolio.  Je m’appelle Esteban Deroussin et je suis né le 26 octobre 2003 à Lyon. J’ai intégré depuis trois ans l’école E.artsup dans la filière direction artistique. Ce site est l’aboutissement de trois ans de travail et de passion. Il vous présente mes meilleurs réalisations dans les différents domaines que j’ai pu expérimenter cette année.</h1>
+        <h1 class="fade-in">J’espère que vous prendrez plaisir à le visiter et que cela vous donnera envie d’explorer de nouvelles opportunités avec moi.</h1>
+    </section>
+    <!-- Section Preview -->
+    <section id="preview">
+        <aside>
+            <h1>Works Preview</h1>
+            <a id="learn-link" class="lignes" href="work.html">
+                <p>Learn more</p>
+                <div>
+                    <span></span>
+                </div>
+            </a>
+            <div class="projet-liste">
+                <p>Project name:</p>
+                <ul>
+                    <li>01_La Vuelta</li>
+                    <li>02_Tapis Roulant</li>
+                    <li>03_Les Vielles Charrues</li>
+                    <li>04_Au delà de la Peur</li>
+                    <li>05_Meg Technologie</li>
+                    <li>06_Foire aux Oignons</li>
+                    <li>07_Louis Vuitton</li>
+                </ul>
+            </div>
+        </aside>
+        <ul id="projet-puce">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <main id="slider">
+            <div class="projet opacity">
+                <img src="assets/img/Vuelta/Gourle.jpg" alt="Illustration du projet">
+                <p class="titre">01_La Vuelta</p>
+                <p class="domaine">Branding & Motion Design</p>
+            </div>
+            <div class="projet opacity">
+                <video src="assets/mov/Tapis roulant - Animation 3D.mov" autoplay muted loop></video>
+                <p class="titre">02_Tapis Roulant</p>
+                <p class="domaine">Motion Design & 3D</p>
+            </div>
+            <div class="projet opacity black-font">
+                <img src="assets/img/Les vielles charrues/Tickets Gratuits.jpg" alt="Illustration du projet">
+                <p class="titre">03_Les Vielles Charrues</p>
+                <p class="domaine">Branding</p>
+            </div>
+            <div class="projet opacity black-font">
+                <img src="assets/img/Au delà de la Peur/Shining.jpg" alt="Illustration du projet">
+                <p class="titre">04_Au delà de la peur</p>
+                <p class="domaine">Print & Photographie</p>
+            </div>
+            <div class="projet opacity black-font">
+                <img src="assets/img/Make Tech/WiFi.jpg" alt="Illustration du projet">
+                <p class="titre">05_Meg Technologie</p>
+                <p class="domaine">Print & Photographie</p>
+            </div>
+            <div class="projet opacity black-font">
+                <img src="assets/img/Foire aux oignons/Gobelet.jpg" alt="Illustration du projet">
+                <p class="titre">06_Foire aux Oignons</p>
+                <p class="domaine">Motion Design</p>
+            </div>
+            <div class="projet opacity">
+                <img src="assets/img/Louis Vuitton/Sac shopping.jpg" alt="Illustration du projet">
+                <p class="titre">07_Louis Vuitton</p>
+                <p class="domaine">Branding & Motion Design</p>
+            </div>
+        </main>
+    </section>
+    <!-- Section Contatc -->
+    <section id="contact">
+        <!-- Logo et réseaux sociaux d'Esteban -->
+        <div class="réseaux">
+            <span></span>
+            <img src="assets/img/logo/logo_noir.png" alt="logo noir">
+            <content>
+                <p>Esteban_Graphic Designer</p>
+                <div>
+                    <a class="fade-in" href="https://www.instagram.com/esteban_drs1/">Instagram</a>
+                    <a class="fade-in" href="https://www.facebook.com/esteban.deroussin">Facebook</a>
+                    <a class="fade-in" href="https://www.linkedin.com/in/esteban-deroussin-28b207252/">Linkedin</a>
+                </div>
+            </content>
+        </div>
+        <div class="coordonnees">
+            <!-- Coordonnées d'Esteban -->
+            <span></span>
+            <article>
+                <h2 class="fade-in">Mes coordonnées</h2>
+                <p class="fade-in">Parlez-moi de votre nouveau projet.</p>
+                <p class="fade-in">Collaborons ensemble et créons un projet qui vous correspond.</p>
+                <aside>
+                    <div class="fade-in">
+                        <img src="assets/img/logo/logo-mail.png" alt="Image d'enveloppe indiquant l'envoie d'un email">
+                        <a href="mailto:esteban.deroussin@icloud.com">Écrivez-moi</a>
+                    </div>
+                    <div class="fade-in">
+                        <img src="assets/img/logo/logo-telephone.png" alt="Image d'un téléphone indiquant l'appelle du créateur">
+                        <a href="tel:+33 6 15 23 27 19">+33 0 15 23 27 19</a>
+                    </div>
+                </aside>
+            </article>
+            <!-- Coordonnées d'Arthur -->
+            <div class="developpeur">
+                <p class="fade-in">Développer par <gras>Arthur MATHIS</gras>, étudiant en Licence MIAGE à la Faculté des Sciences et Techniques de l'UHA.</p>
+                <p class="fade-in">Retrouvez ses contacts et autres travaux ci-dessous.</p>
+                <div class="reseaux-arthur">
+                    <div class="item-reseau fade-in">
+                        <img src="assets/img/logo/Github_logo.png" alt="Logo Linkedin">
+                        <a href="https://www.linkedin.com/in/arthur-mathis-0a8701268/">Likedin</a>
+                    </div>
+                    <div class="item-reseau fade-in">
+                        <img src="assets/img/logo/Github_logo.png" alt="Logo github">
+                        <a href="https://github.com/ArthurMathis">GitHub</a> 
+                    </div>
+                    <div class="item-reseau fade-in">
+                        <img src="assets/img/logo/logo-telephone.png" alt="">
+                        <a href="tel:+33 6 38 85 55 57">+33 6 85 55 57</a>
+                    </div>
+                    <div class="item-reseau fade-in">
+                        <img src="assets/img/logo/logo-mail.png" alt="">
+                        <a href="mailto:mathis.arthur68@gmail.com">mathis.arthur68@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recap-projet">
+            <p class="fade-in">Projets :</p>
+                <div>
+                    <a href="#" class="fade-in">01_La Vuelta</a>
+                    <a href="#" class="fade-in">02_Tapis Roulant</a>
+                    <a href="#" class="fade-in">03_Les Vielles Charrues</a>
+                    <a href="#" class="fade-in">04_Au delà de la Peur</a>
+                    <a href="#" class="fade-in">05_Meg Technologie</a>
+                    <a href="#" class="fade-in">06_Foire aux Oignons</a>
+                    <a href="#" class="fade-in">07_Louis Vuitton</a>
+                </div>
+        </div>
+    </section>
+    <!-- Section galerie -->
+    <section id="galerie">
+        <nav class="lignes"><p id="closeButton">[Close]</p></nav>
+        <content>
+            <!-- La Vuelta -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>01</h1>
+                        <h1>La Vuelta</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Branding & Motion Design</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Illustrator, Photoshop, After effect et Indesign</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item small-item">
+                        <img src="assets/img/Vuelta/Affiche noire zoom.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <video src="assets/mov/La Vuelta - Animation rouge.mp4" alt="Affiche animée" autoplay loop></video>
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item small-item">
+                        <video src="assets/mov/La Vuelta - Animation noire.mp4" alt="Affiche animée" autoplay loop></video>
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Vuelta/Noir & Rouge.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 4 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Vuelta/Gourle.jpg" alt="Mockup du projet">
+                        <p>( 5 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Vuelta/Sac.jpg" alt="Mockup du projet">
+                        <p>( 6 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Tapis Roulant -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>02</h1>
+                        <h1>Tapis Roulant</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Motion Design & 3D</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Cinema 4D & After Effect</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <!-- Faux item forçant l'aligenement -->
+                    <div class="small-item"></div>
+                    <div class="item big-item">
+                        <video src="assets/mov/Tapis roulant - Animation 3D.mov" autoplay loop></video>
+                        <p>( 1 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Les Vielles Charrues -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>03</h1>
+                        <h1>Les Vieilles Charrues</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Branding</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Illustrator, Photoshop et Indesign</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item small-item">
+                        <img src="assets/img/Les vielles charrues/Affiche zoom.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Les vielles charrues/Flyer.jpg" alt="Affiche du projet">
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Les vielles charrues/Affiches.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item small-item">
+                        <img src="assets/img/Les vielles charrues/Gourde.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 4 )</p>
+                    </div>
+                    <div class="item solo-item">
+                        <img src="assets/img/Les vielles charrues/Horizontale.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 5 )</p>
+                    </div>  
+                    <div class="item small-item">
+                        <img src="assets/img/Les vielles charrues/Sac.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 6 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Les vielles charrues/Tickets Gratuits.jpg" alt="Illustration sous forme de Mockup">
+                        <p>( 7 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Au delà de la Peur -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>04</h1>
+                        <h1>Au de là de la Peur</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Print & Photographie</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Photoshop et Indesign</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item small-item">
+                        <img src="assets/img/Au delà de la Peur/Page de fin.jpg" alt="">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Au delà de la Peur/Page de garde.jpg" alt="">
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item solo-item">
+                        <img src="assets/img/Au delà de la Peur/Les mécanismes.jpg" alt="">
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Au delà de la Peur/Shining.jpg" alt="">
+                        <p>( 4 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Au delà de la Peur/Shutter.jpg" alt="">
+                        <p>( 5 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Meg Technologie -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>05</h1>
+                        <h1>Meg Technologie</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>UX Design</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Figma et Cinema 4D</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item solo-item">
+                        <img src="assets/img/Make Tech/Carte mère.jpg" alt="">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item solo-item">
+                        <img src="assets/img/Make Tech/WiFi.jpg" alt="">
+                        <p>( 2 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Electro-Polis -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>06</h1>
+                        <h1>Electro-Polis</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Branding & UX Design</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Illustrator, Photoshop & Figma</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item solo-item">
+                        <img src="assets/img/Electro-Polis/Electropolis.jpg" alt="">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item small-item">
+                        <img src="assets/img/Electro-Polis/Billboard.jpg" alt="">
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Electro-Polis/Billeterie.jpg" alt="">
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item solo-item">
+                        <img src="assets/img/Electro-Polis/Mockup Macbook pro.jpg" alt="">
+                        <p>( 4 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Foire aux Oignons -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>07</h1>
+                        <h1>Foire aux oignons</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Branding</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Illustrator, Photoshop & Indesign</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie">
+                    <div class="item">
+                        <img src="assets/img/Foire aux oignons/Zoomjpg.jpg" alt="">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Foire aux oignons/Mockup.jpg" alt="">
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item big-item">
+                        <img src="assets/img/Foire aux oignons/Affiches.jpg" alt="">
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item small-item">
+                        <img src="assets/img/Foire aux oignons/Gobelet.jpg" alt="">
+                        <p>( 4 )</p>
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Louis Vuitton -->
+            <article class="projet lignes">
+                <aside>
+                    <div class="titre">
+                        <h1>08</h1>
+                        <h1>Louis Vuitton</h1>
+                    </div>
+                    <div class="domaine">
+                        <h2>Domaine</h2>
+                        <h2>Branding</h2>
+                    </div>
+                    <div class="outils">
+                        <h2>Outils</h2>
+                        <h2>Illustrator & Photoshop</h2>
+                    </div>
+                </aside>
+                <div class="mask"></div>
+                <div class="items-galerie lignes">
+                    <div class="item">
+                        <img src="assets/img/Louis Vuitton/Magasin.jpg" alt="">
+                        <p>( 1 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Louis Vuitton/Sac shopping.jpg" alt="">
+                        <p>( 2 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Louis Vuitton/Logo.jpg" alt="">
+                        <p>( 3 )</p>
+                    </div> 
+                    <div class="item">
+                        <img src="assets/img/Louis Vuitton/Flacon.jpg" alt="">
+                        <p>( 4 )</p>
+                    </div> 
+                </div>
+            </article>
+        </content>
+    </section>
+
+    <script src="scripts/app/data.js"></script>
+    <script src="scripts/app/controler.js"></script>
+    <script src="scripts/app/view.js"></script>
+</body>
+</html>
