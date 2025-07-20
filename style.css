@@ -1,0 +1,778 @@
+/* =================== IMPORTS =================== */
+@import url('Assets/Typographies/PPNeueMontreal-Regular.otf');
+
+/* ===========================================================
+   ===============   RESET & BASE GÉNÉRAL   ==================
+   =========================================================== */
+* {
+    font-family: 'PP Neue Montreal', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* =================== IMPORTS =================== */
+@import url('Assets/Typographies/PPNeueMontreal-Regular.otf');
+
+/* ===========================================================
+   ===============   RESET & BASE GÉNÉRAL   ==================
+   =========================================================== */
+* {
+    font-family: 'PP Neue Montreal', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* ===========================================================
+   ===================   ANIMATION FADE REVEAL   ========================
+   =========================================================== */
+
+.fade-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.fade-reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.fade-reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.fade-reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.fade-reveal-delay-5 {
+    transition-delay: 0.5s;
+}
+
+/* ===========================================================
+   =======================   NAVBAR   ========================
+   =========================================================== */
+.navbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem);
+    height: 3.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    font-size: 1.15rem;
+    border-bottom: 1px solid black;
+    backdrop-filter: blur(5px);
+}
+
+/* --- Logo --- */
+.logo {
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* --- Liens de navigation --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20rem;
+    width: 100%;
+}
+
+.liens {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* --- Bouton Galerie --- */
+.galerie-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 1.15rem;
+}
+
+.galerie-btn:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+/* ===========================================================
+   =====================   SECTION HERO   ====================
+   =========================================================== */
+.section-hero {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+    background-color: rgb(255, 255, 255);
+    gap: 1rem;
+}
+
+/* --- Partie haute du hero --- */
+.top {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.hero-logo {
+    display: flex;
+    gap: 1rem;
+    height: 100%;   
+}
+
+.top img {
+    height: 100%;
+}
+
+.rectangle {
+    display: flex;
+    height: 4rem;
+    background-color: rgb(0, 0, 0);
+}
+
+/* --- Partie basse du hero --- */
+.bottom {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-top: 1px solid black;
+}
+
+/* --- Contenu haut du hero --- */
+.hero-content-top {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.15rem;
+}
+
+.left div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.left button {
+    color: black;
+    background-color: white;
+    border: 0.5px solid black; 
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-size: 1.15rem;
+    font-weight: 100;
+}
+
+.left button:hover {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.right h1 {
+    display: flex;
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 500;
+    text-align: right;
+    line-height: 1;
+}
+
+/* --- Animation logo hero --- */
+.hero-logo #logo-vide {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-logo:hover #logo-vide {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+/* --- Contenu bas du hero --- */
+.hero-content-bottom {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    font-size: 1.15rem;
+}
+
+.links-wrap {
+    display: flex;
+    align-items: flex-start;
+}
+
+.hero-content-bottom .links-wrap {
+    display: flex;
+}
+
+.hero-content-bottom .list-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-wrap a {
+    text-decoration: none;
+    color: rgb(164, 164, 164);
+}
+
+.list-wrap a:hover {
+    color: black;
+}
+
+.hero-content-bottom p {
+    margin: 0;
+}
+
+.hero-content-bottom .links-wrap p {
+    display: flex;
+    padding-right: 3rem;
+    margin-top: 0;
+}
+
+/* ===========================================================
+   ==================   SECTION À PROPOS   ===================
+   =========================================================== */
+.section-2 {
+    display: flex;
+    height: 100%;
+    border-top: 1px solid black;
+    flex-direction: column;
+}
+
+.about-me-top h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+}
+
+.profile-photo {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    height: 20rem;
+    width: 25%;
+    margin-bottom: 5rem;
+    transition: width 0.8s ease;
+}
+
+.profile-photo p {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.profile-photo p.active {
+    opacity: 1;
+}
+
+.section-2  p {
+    font-size: 4.7rem;
+    font-weight: 450;
+    line-height: 1;
+    padding-bottom: 1rem;
+}
+
+/* ===========================================================
+   ===================   SECTION PROJETS   ===================
+   =========================================================== */
+.section-3 {
+    display: flex;
+    height: calc(100vh - 3.5rem);
+}
+
+.list-project {
+    display: flex;
+    width: 40%;
+    height: 100%;
+}
+
+.image-project {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.image-project img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===========================================================
+   ===================   SECTION PROJETS PREVIEW   ===================
+   =========================================================== */
+.section-3 {
+    display: flex;
+    height: calc(100vh - 3.9rem);
+}
+
+.left-div {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.left-div h2 {
+    font-size: 7rem;
+    font-weight: 500;
+    line-height: 0.9;
+    margin: 0;
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+.btn-learn-more {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 0.3rem;
+    border-bottom: 1.3px solid black;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-learn-more li {
+    line-height: 1;
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+
+.btn-learn-more li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.list-wrapper {
+    display: flex;
+    gap: 1rem;
+    width: 65%;
+    justify-content: space-between;
+}
+
+.projects-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 1rem;  
+}
+
+.list-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.list-wrapper ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 1.15rem;
+    font-size: 1.3rem;
+    line-height: 1;
+    list-style: none;
+}
+
+.right-div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.right-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-project-0 {
+    position: relative;
+    display: flex; 
+    width: 100%;
+}
+
+
+.image-project-0 p {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    margin: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.image-project-1 {
+    display: none;
+}
+
+.image-project-2 {
+    display: none;
+}
+
+/* ===========================================================
+   ===================   MENU MOBILE   =======================
+   =========================================================== */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+
+}
+
+.menu-btn:hover {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    padding-left: 2rem;
+}
+
+.overlay-menu.active {
+    display: flex;
+}
+
+.overlay-logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 10rem;
+}
+
+.overlay-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+    color: white;
+    font-weight: 500;
+}
+
+.close-btn:hover {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.overlay-links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.overlay-links a {
+    font-size: 5rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    width: calc(100% - 2rem);
+
+}
+
+.overlay-links a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+
+}
+
+/* ===========================================================
+   ===================   GALERIE   ========================
+   =========================================================== */
+
+.galerie-container {
+    display: none;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.close-button {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001;
+    border-radius: 100px;
+    height: 3.5rem;
+    padding-right: 1rem;
+    padding-left: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.close-button p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.arrow {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.close-btn-galerie {
+    margin: 0;
+    background: none;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 1.15rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: fit-content;
+    width: fit-content;
+}
+
+.close-btn-galerie:hover {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+
+
+/* ===========================================================
+   ===================   RESPONSIVE   ========================
+   =========================================================== */
+
+/* --- Desktop large --- */
+@media (min-width: 1700px) {
+    .right h1 {
+        font-size: 6.5rem;
+    }
+    .section-2 p {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 1460px) {
+    #logo-vide {
+        display: none;
+    }
+}
+
+@media (max-width: 1130px) {
+
+    .left div {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .section-3 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-div h2 {
+        font-size: 4.5rem;
+    }
+
+    .image-project-0 {
+        display: none;
+    }
+
+    .left-div {
+        display: flex;
+        flex-direction:initial;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+    }
+
+    
+}
+/* --- Tablet --- */
+@media screen and (max-width: 950px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+    .time-display {
+        display: none;
+    }
+    .section-2 p {
+        font-size: 2.8rem;
+    }
+}
+
+/* --- Mobile --- */
+@media screen and (max-width: 768px) {
+    .top {
+        height: 30%;
+    }
+
+    .hero-logo {
+       height: 75%;
+    }
+
+    .hero-logo #logo-plein {
+        height: 100%;
+    }
+
+    .bottom {
+        height: 100%;
+    }
+
+    .rectangle {
+        height: 25%;
+    }
+
+    .left p {
+        display: none;
+    }
+
+    .left div {
+        display: none;
+    }
+
+    .right h1 {
+        font-size: 2.8rem;
+        padding-top: 0.5rem;
+    }
+
+    .links-wrap {
+        align-items: flex-end;
+    }
+
+    .bottom {
+        height: 100%;
+    }
+
+    .hero-content-top {
+        height: 100%;
+    }
+
+    .hero-content-bottom {
+        height: 100%;
+    }
+
+    .section-2 p {
+        font-size: 2.5rem;
+    }
+
+}

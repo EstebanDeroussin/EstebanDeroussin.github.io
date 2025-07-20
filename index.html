@@ -1,20 +1,139 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Esteban Deroussin</title>
-    <link rel="icon" href="assets/img/logo/logo_noir.png">
-
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <link rel="stylesheet" href="stylesheet/open_app.css">
+    <title>EstebanGraphicdesigner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="assets/img/logo/logo_noir.png" alt="logo noir">
-    <img class="second-logo" src="assets/img/logo/logo_blanc.png" alt="logo blanc">
 
-    <script>
-        setTimeout(() => { window.location = "app.html"; }, 2000);
-    </script>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Assets/Img/Logo.svg" alt="Logo">
+            <p>Designer<br>Developper</p>
+        </div>
+        <button class="menu-btn">Menu</button>
+        <ul class="nav-links">
+            <div class="liens">
+                <a href="#accueil">Home</a>
+                <a href="#services">Contact</a>
+                <a href="works.html">Work</a>
+            </div>
+            <div class="time-display">
+                <span id="current-time"></span>
+            </div>
+        </ul>
+        <button class="galerie-btn">Galerie</button>
+    </nav>
+
+    <div class="overlay-menu">
+        <button class="close-btn">Close</button>
+        <div class="overlay-links">
+            <a href="#accueil">Home</a>
+            <a href="#services">Contact</a>
+            <a href="works.html">Work</a>
+        </div>
+    </div>
+
+    <div class="galerie-container">
+        <div class="close-button">
+            <p>Here is the preview of my works scroll down to see more
+                <span class="arrow">→</span>
+            </p>
+            <button class="close-btn-galerie">Close</button>
+        </div>
+    </div>
+
+    <!-- ===== SECTION HERO ===== -->
+    <section class="section-hero">
+        <div class="top">
+            <div class="hero-logo">
+                <img id="logo-plein" src="Assets/Img/Logo_hero.svg" alt="">
+                <img id="logo-vide" src="Assets/Img/logo-outline.svg" alt="">
+            </div>
+            <div class="rectangle"></div>
+        </div>
+        <div class="bottom">
+            <div class="hero-content-top">
+                <div class="left">
+                    <p>Mes domaines de compétences</p>
+                    <div>
+                        <button>Typographie</button>
+                        <button>Motion Design</button>
+                        <button>UX/UI</button>
+                        <button>Branding</button>
+                        <button>Illustration</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>
+                        Esteban_ <br>Graphic Designer
+                    </h1>
+                </div>
+            </div>
+            <div class="hero-content-bottom">
+                <div class="links-wrap">
+                    <p>Projets:</p>
+                    <div class="list-wrap">
+                        <a href="#about">À propos</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#temoignages">Témoignages</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <p>Scroll pour découvrir</p>
+            </div>
+        </div>
+    </section>
+    <section class="section-2">
+        <div class="about-me-top">
+            <h2>About me</h2>
+            <div class="profile-photo">
+                    <p>Voila ca c'est ma tete</p>
+                    
+            </div>
+            
+        </div>
+        <p>Bonjour et bienvenue dans mon portfolio.  Je m'appelle Esteban Deroussin et je suis né le 26 octobre 2003 à Lyon. J'ai intégré depuis trois ans l'école E.artsup dans la filière direction artistique. Ce site est l'aboutissement de trois ans de travail et de passion. Il vous présente mes meilleurs réalisations dans les différents domaines que j'ai pu expérimenter cette année. 
+            J'espère que vous prendrez plaisir à le visiter et que cela vous donnera envie d'explorer de nouvelles opportunités avec moi.
+            </p>
+    </section>
+    <section class="section-3">
+        <div class="left-div">
+            <h2>Works<br>Preview</h2>
+            
+            <div class="projects-list">
+                <div class="list-wrapper">
+                    <p>Projects :</p>
+                    <ul>
+                        <li><a href="#Works">projetc-1</a></li>
+                        <li><a href="#Works">project-2</a></li>
+                        <li><a href="#Works">Learn more</a></li>
+                        <li><a href="#Works">Learn more</a></li>
+                        <li><a href="#Works">Learn more</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-div">
+            
+            <div class="image-project-0">
+                <p>Hover project-list button <br> to preview</p>
+                <img src="Assets/Img/Logofini.jpg" alt="">
+            </div>
+            <div class="image-project-1">
+                <img src="Assets/Img/mockup_lalala_noir.jpg" alt="">
+            </div>
+            <div class="image-project-2">
+                <img src="Assets/Img/02-Apparel-Mockups-Premade-Scene.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
 </body>
+</html>
